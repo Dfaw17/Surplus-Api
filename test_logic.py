@@ -1,19 +1,28 @@
 import requests
 
 
-url_reset_pass = "https://staging.adminsurplus.net/api/v2/merchant/categories"
+url_all_category = "https://staging.adminsurplus.net/api/v2/merchant/categories"
+url_login = "https://staging.adminsurplus.net/api/v2/merchant/auth/login"
 email = "kopiruangvirtual@gmail.com"
+kata_sandi = "12345678"
 
-headers = {
-    "Accept":"application/json",
-    "Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc3RhZ2luZy5hZG1pbnN1cnBsdXMubmV0XC9hcGlcL3YyXC9tZXJjaGFudFwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MTUyODExOTcsImV4cCI6MTYxNzg3MzE5NywibmJmIjoxNjE1MjgxMTk3LCJqdGkiOiIyMHlLU2xEdXY0V1N3cTFBIiwic3ViIjo0MDc3LCJwcnYiOiIyNzQxMDVkYTZlOTViZWYyODA3Nzg2ZGQ4NzM4ODY3Y2Y5YzAyYWFiIn0.HaIqvP33rkandP7whxqPtt6h65KWA4RzYiN3hMreNt8"
-}
+param = {
+            "email": email,
+            "password": kata_sandi
+        }
+login =requests.post(url_login, data=param,
+                                headers={'Accept': 'application/json'})
+token = login.json().get("token")
+response = requests.get(url_all_category)
+data = response.text
 
-response =requests.get(url_reset_pass,headers=headers)
+assert "Unauthorized" in data
 
-data = response.json()
-validate_available_category = len(data.get("data"))
-print(validate_available_category)
+# validate_status = data.get("success")
+# validate_message = data.get("message")
+# validate_data = len(data.get("data"))
+
 # assert validate_status == bool(True)
 # assert response.status_code == 200
-# assert "Kami mengirimkan link untuk reset password ke e-mail" in validate_message
+# assert "Data menu ditemukan." in validate_message
+# assert validate_data >= 1
