@@ -1,12 +1,14 @@
 import requests
 from assertpy import assert_that
+from env import stagging
 
 class TestShowProfile:
 
-    global url_show_profile, url_login, email, kata_sandi, wrong_token
+    global url_show_profile, url_login, email, kata_sandi, wrong_token, setting_env
 
-    url_show_profile = "https://staging.adminsurplus.net//api/v2/merchant/profiles"
-    url_login = "https://staging.adminsurplus.net/api/v2/merchant/auth/login"
+    setting_env = stagging
+    url_show_profile = f"{setting_env}/api/v2/merchant/profiles"
+    url_login = f"{setting_env}/api/v2/merchant/auth/login"
     email = "kopiruangvirtual@gmail.com"
     kata_sandi = "12345678"
     wrong_token = "yJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc3RhZ2luZy5hZG1pbnN1cnBsdXMubmV0XC9hcGlcL3YyXC9tZXJjaGFudFwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MTUzOTIzMDQsImV4cCI6MTYxNzk4NDMwNCwibmJmIjoxNjE1MzkyMzA0LCJqdGkiOiJOVGJ1Qk4xODE2VU5Fd2VKIiwic3ViIjo0MDc3LCJwcnYiOiIyNzQxMDVkYTZlOTViZWYyODA3Nzg2ZGQ4NzM4ODY3Y2Y5YzAyYWFiIn0.QQqZAjqTaM6aUJ-uZU8E53iIRySWB_A9mQTIt_tUXsQ"

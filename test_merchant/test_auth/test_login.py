@@ -1,11 +1,13 @@
 import requests
+from env import stagging
 
 class TestLogin:
 
     global url_login, email, kata_sandi, email_not_registered, kata_sandi_not_registered\
-            , wrong_email, wrong_pass, email_withot_at, kata_sandi_kurang_char
+            , wrong_email, wrong_pass, email_withot_at, kata_sandi_kurang_char, setting_env
 
-    url_login ="https://staging.adminsurplus.net/api/v2/merchant/auth/login"
+    setting_env = stagging
+    url_login =f"{setting_env}/api/v2/merchant/auth/login"
     email ="kopiruangvirtual@gmail.com"
     kata_sandi ="12345678"
     email_not_registered = "kopi.ruang.rehat@gmail.com"

@@ -1,10 +1,12 @@
 import requests
+from env import stagging
 
 class TestPasswordReset :
 
-    global url_reset_pass, email, wrong_email, email_without_at, email_with_space
+    global url_reset_pass, email, wrong_email, email_without_at, email_with_space, setting_env
 
-    url_reset_pass = "https://staging.adminsurplus.net/api/v2/merchant/auth/password-reset"
+    setting_env = stagging
+    url_reset_pass = f"{setting_env}/api/v2/merchant/auth/password-reset"
     email = "kopiruangvirtual@gmail.com"
     wrong_email = "kopiruangvirtual1@gmail.com"
     email_without_at = "kopiruangvirtual1gmail.com"

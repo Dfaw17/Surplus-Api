@@ -1,11 +1,13 @@
 import requests
+from env import stagging
 
 class TestLogout :
 
-    global url_login, url_logut, email, kata_sandi, token
+    global url_login, url_logut, email, kata_sandi, token, setting_env
 
-    url_login = "https://staging.adminsurplus.net/api/v2/merchant/auth/login"
-    url_logut = "https://staging.adminsurplus.net/api/v2/merchant/auth/logout"
+    setting_env = stagging
+    url_login = f"{setting_env}/api/v2/merchant/auth/login"
+    url_logut = f"{setting_env}/api/v2/merchant/auth/logout"
     email = "kopiruangvirtual@gmail.com"
     kata_sandi = "12345678"
 
