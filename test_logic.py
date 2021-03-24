@@ -37,22 +37,22 @@ headers2 = {
     "Accept":"application/json"
 }
 
-response2 = requests.patch(set_active_menu+data_id+"/active", data=param2, headers=headers2)
-data = response2.json()
+# response2 = requests.patch(set_active_menu+data_id+"/active", data=param2, headers=headers2)
+# data = response2.json()
 
-print(data)
-validate_status = data.get('success')
-validate_message = data.get('message')['waktu_akhir_penjemputan']
+# print(data)
+# validate_status = data.get('success')
+# validate_message = data.get('message')['waktu_akhir_penjemputan']
 # validate_menu = str(data.get('data')['id'])
 # validate_status_menu = data.get('data')['is_tomorrow']
 # validate_menu_stock = data.get('data')['stock']
 # validate_menu_start = data.get('data')['waktu_mulai_penjemputan']
 # validate_menu_end = data.get('data')['waktu_akhir_penjemputan']
 #
-assert response2.status_code == 422
-assert validate_status == bool(False)
+# assert response2.status_code == 422
+# assert validate_status == bool(False)
 # print(validate_message)
-assert "Waktu akhir penjemputan tidak cocok dengan format H:i." in validate_message
+# assert "Waktu akhir penjemputan tidak cocok dengan format H:i." in validate_message
 # assert "Data tidak ditemukan" in validate_message
 # assert validate_menu == data_id
 # assert validate_status_menu == "0"
