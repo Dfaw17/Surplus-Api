@@ -1,7 +1,8 @@
 import requests
 from env import stagging
 
-class TestOrderIndex :
+class TestOrderHistoryTransaction :
+
     global setting_env,history_trx,url_login,email,kata_sandi,wrong_token
 
     setting_env = stagging
