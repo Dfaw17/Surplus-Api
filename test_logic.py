@@ -5,6 +5,7 @@ from assertpy import assert_that
 
 setting_env = stagging
 order_index = f"{setting_env}/api/v2/merchant/orders"
+order_show = f"{setting_env}/api/v2/merchant/orders/"
 url_login = f"{setting_env}/api/v2/merchant/auth/login"
 email = "vd1@gmail.com"
 kata_sandi = "12345678"
@@ -23,24 +24,46 @@ headers = {
 }
 param2 = {
 
-    "type":"1"
+    "type":"finish"
 }
 
-response= requests.get(order_index,params=param2, headers=headers)
-data = response.json()
+index= requests.get(order_index,params=param2, headers=headers)
+data_index = index.json()
+trx_id = data_index.get('data')[0]['registrasi_order_number']
 
-validate_status = data.get('success')
-validate_message= data.get('message')['type']
-print(data)
-assert response.status_code == 422
+headers2 = {
+    "Authorization": wrong_token,
+    "Accept":"application/json"
+}
+
+response= requests.get(order_show+trx_id, headers=headers2)
+data_response = response.json()
+
+validate_status = data_response.get('success')
+validate_message= data_response.get('message')
+
+assert response.status_code == 401
 assert validate_status == bool(False)
-assert "type yang dipilih tidak tersedia." in validate_message
+assert 'Unauthorized' in validate_message
 
 
 
-# response2 = requests.patch(set_active_menu+data_id+"/active", data=param2, headers=headers2)
-# data = response2.json()
-
+# validate_trx_id= data_response.get('data')['registrasi_order_number']
+# validate_alamat= data_response.get('data')['alamat']
+# validate_metode_pembayaran= data_response.get('data')['metode_pembayaran']
+# validate_jenis_order= data_response.get('data')['preorder']
+# validate_items_menu= data_response.get('data')['items']
+# validate_merchant= data_response.get('data')['merchant']
+# print(validate_items_menu)
+# assert response.status_code == 200
+# assert validate_status == bool(True)
+# assert "Data pesanan ditemukan." in validate_message
+# assert validate_trx_id == trx_id
+# assert_that(validate_alamat).is_not_empty()
+# assert_that(validate_metode_pembayaran).is_in('OVO','GOPAY','DANA')
+# assert_that(validate_jenis_order).is_in(0,1)
+# assert_that(validate_items_menu).is_not_empty()
+# assert_that(validate_merchant).is_not_empty()
 # print(data)
 # validate_status = data.get('success')
 # validate_message = data.get('message')['waktu_akhir_penjemputan']
@@ -49,7 +72,6 @@ assert "type yang dipilih tidak tersedia." in validate_message
 # validate_menu_stock = data.get('data')['stock']
 # validate_menu_start = data.get('data')['waktu_mulai_penjemputan']
 # validate_menu_end = data.get('data')['waktu_akhir_penjemputan']
-#
 # assert response2.status_code == 422
 # assert validate_status == bool(False)
 # print(validate_message)
