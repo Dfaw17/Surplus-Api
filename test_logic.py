@@ -4,8 +4,7 @@ from assertpy import assert_that
 
 
 setting_env = stagging
-order_index = f"{setting_env}/api/v2/merchant/orders"
-order_show = f"{setting_env}/api/v2/merchant/orders/"
+history_trx = f"{setting_env}/api/v2/merchant/reports/transaction-history"
 url_login = f"{setting_env}/api/v2/merchant/auth/login"
 email = "vd1@gmail.com"
 kata_sandi = "12345678"
@@ -19,35 +18,26 @@ param = {
 login = requests.post(url_login, data=param,headers={'Accept': 'application/json'})
 token = login.json().get("token")
 headers = {
-    "Authorization": f"Bearer {token}",
-    "Accept":"application/json"
-}
-param2 = {
-
-    "type":"finish"
-}
-
-index= requests.get(order_index,params=param2, headers=headers)
-data_index = index.json()
-trx_id = data_index.get('data')[0]['registrasi_order_number']
-
-headers2 = {
-    "Authorization": wrong_token,
+    "Authorization": "",
     "Accept":"application/json"
 }
 
-response= requests.get(order_show+trx_id, headers=headers2)
-data_response = response.json()
+response= requests.get(history_trx, headers=headers)
+data = response.json()
 
-validate_status = data_response.get('success')
-validate_message= data_response.get('message')
-
-assert response.status_code == 401
+validate_status = data.get('success')
+validate_message = data.get('message')
+print(response.json())
 assert validate_status == bool(False)
 assert 'Unauthorized' in validate_message
+assert response.status_code == 401
 
 
-
+# validate_status = data_response.get('success')
+# validate_message= data_response.get('message')
+# assert response.status_code == 401
+# assert validate_status == bool(False)
+# assert 'Unauthorized' in validate_message
 # validate_trx_id= data_response.get('data')['registrasi_order_number']
 # validate_alamat= data_response.get('data')['alamat']
 # validate_metode_pembayaran= data_response.get('data')['metode_pembayaran']
