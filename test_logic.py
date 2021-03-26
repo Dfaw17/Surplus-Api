@@ -4,27 +4,22 @@ from pprint import pprint
 from assertpy import assert_that
 
 setting_env = sandbox
-register_oauth = f"{setting_env}/api/v2/customer/auth/register/oauth"
-login_oauth = f"{setting_env}/api/v2/customer/auth/login/oauth"
-delete_account = f"{setting_env}/api/v2/customer/profiles"
+resend_otp = f"{setting_env}/api/v2/customer/auth/register/otp/resend"
 email = "daffafawwazmaulana170901@gmail.com"
-origin_id = "2840811776172986"
-origin = "facebook"
 
 param = {
-    'email' : 'halogmail.com',
-    'origin': 'facebookk',
-    'id_from_origin':origin_id
+    'email': "daffafawwazmaulana170901 @gmail.com"
 }
 headers = {
             "Accept": "application/json"
 }
-response = requests.post(register_oauth, data=param, headers=headers)
+
+response = requests.post(resend_otp, data=param,headers=headers)
 data = response.json()
 pprint(data)
 validate_status = data.get('success')
-validate_message = data.get('message')['origin']
+validate_message = data.get('message')
 
-assert  response.status_code == 422
+assert  response.status_code == 500
 assert validate_status == bool(False)
-assert 'Sosial media hanya boleh Google atau Facebook' in validate_message
+assert 'Whoops, looks like something went wrong' in validate_message

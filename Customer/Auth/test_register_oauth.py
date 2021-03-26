@@ -1,5 +1,5 @@
 import requests
-from env import sandbox
+from env import stagging
 from pprint import pprint
 from assertpy import assert_that
 
@@ -7,7 +7,7 @@ class TestCustomerRegisterOauth:
 
     global setting_env,register_oauth,login_auth,delete_account,email,origin_id,origin
 
-    setting_env = sandbox
+    setting_env = stagging
     register_oauth = f"{setting_env}/api/v2/customer/auth/register/oauth"
     login_auth = f"{setting_env}/api/v2/customer/auth/login/oauth"
     delete_account = f"{setting_env}/api/v2/customer/profiles"
