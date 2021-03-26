@@ -1,37 +1,30 @@
 import requests
-from env import stagging
+from env import sandbox
 from pprint import pprint
 from assertpy import assert_that
-from faker import Faker
-fake = Faker()
 
+setting_env = sandbox
+register_oauth = f"{setting_env}/api/v2/customer/auth/register/oauth"
+login_oauth = f"{setting_env}/api/v2/customer/auth/login/oauth"
+delete_account = f"{setting_env}/api/v2/customer/profiles"
+email = "daffafawwazmaulana170901@gmail.com"
+origin_id = "2840811776172986"
+origin = "facebook"
 
-
-
-setting_env = stagging
-register_email = f"{setting_env}/api/v2/customer/auth/register/email"
-email = fake.email()
-kata_sandi = "12345678"
-email_has_registered = 'kopiruangvirtual@gmail.com'
-
-headers = {
-    "Accept":"application/json"
-}
 param = {
-
-    "email": email,
-    'password': 'kata_sandi',
-    're-password':'12345678'
+    'email' : 'halogmail.com',
+    'origin': 'facebookk',
+    'id_from_origin':origin_id
 }
-response = requests.post(register_email, data=param,headers=headers)
+headers = {
+            "Accept": "application/json"
+}
+response = requests.post(register_oauth, data=param, headers=headers)
 data = response.json()
-
+pprint(data)
 validate_status = data.get('success')
-validate_message = data.get('message')['re-password']
-
+validate_message = data.get('message')['origin']
 
 assert  response.status_code == 422
 assert validate_status == bool(False)
-assert 're-password dan Kata sandi harus sama.' in validate_message
-
-pprint(response.json())
+assert 'Sosial media hanya boleh Google atau Facebook' in validate_message
