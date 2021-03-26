@@ -4,20 +4,20 @@ from pprint import pprint
 from assertpy import assert_that
 
 setting_env = stagging
-register_progress = f"{setting_env}/api/v2/customer/auth/register/progress"
-email = "kopiruangvirtual@gmail.com"
-kata_sandi = "12345678"
+check_email = f"{setting_env}/api/v2/customer/auth/register/check-email"
+email_has_registered = "kopiruangvirtual@gmail.com"
+email_hasnt_registered = "abc@gmail.com"
 
 param = {
-    'email' : "kopiruangvirtualgmail.com"
+    'email' : 'kopiruangvirtualgmail.com'
 }
 headers = {
     "Accept": "application/json"
 }
 
-response = requests.get(register_progress, params=param, headers=headers)
+response = requests.post(check_email, params=param, headers=headers)
 data = response.json()
-# pprint(response.json())
+pprint(data)
 
 validate_status = data.get('success')
 validate_message = data.get('message')['email']
