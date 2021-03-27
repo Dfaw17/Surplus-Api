@@ -4,37 +4,33 @@ from pprint import pprint
 from assertpy import assert_that
 
 setting_env = stagging
-register_oauth = f"{setting_env}/api/v2/customer/auth/register/oauth"
-login_oauth = f"{setting_env}/api/v2/customer/auth/login/oauth"
-delete_oauth = f"{setting_env}/api/v2/customer/profiles"
-email = "daffafawwazmaulana170901@gmail.com"
-origin = "facebook"
-id_origin = "2840811776172986"
+url_login = f"{setting_env}/api/v2/customer/auth/login/email"
+url_logout = f"{setting_env}/api/v2/customer/auth/logout"
+email = "kopiruangvirtual@gmail.com"
+kata_sandi = '12345678'
+wrong_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc3RhZ2luZy5hZG1pbnN1cnBsdXMubmV0XC9hcGlcL3YyXC9jdXN0b21lclwvYXV0aFwvbG9naW5cL2VtYWlsIiwiaWF0IjoxNjE2ODA1NzI2LCJleHAiOjE2MTkzOTc3MjYsIm5iZiI6MTYxNjgwNTcyNiwianRpIjoib05ESmxFRE5hSzNrN2RtVyIsInN1YiI6NDEyNiwicHJ2IjoiMjc0MTA1ZGE2ZTk1YmVmMjgwNzc4NmRkODczODg2N2NmOWMwMmFhYiJ9.fj51xIfQrqleRvdSJUbWcdrvsxQPUn8HpccnOmTgPDI'
 
 
 param = {
     'email': email,
-    'origin' : origin,
-    'id_from_origin' : ''
+    'password' : kata_sandi
 }
 headers = {
     "Accept": "application/json"
 }
+login = requests.post(url_login, params=param, headers=headers)
+param2 = {
+    'token' : wrong_token
+}
+logout = requests.post(url_logout, params=param2, headers=headers)
 
-# register = requests.post(register_oauth, params=param, headers=headers)
-# loginfailed = requests.post(login_oauth, params=param_failed, headers=headers)
-login = requests.post(login_oauth, params=param, headers=headers)
-# delete = requests.delete(delete_oauth,  headers={"Authorization": f"Bearer {login.json().get('token')}"})
+validate_status = logout.json().get('success')
+validate_message = logout.json().get('message')
 
-validate_status = login.json().get('success')
-validate_message = login.json().get('message')['id_from_origin']
-
-assert login.status_code == 422
+assert logout.status_code == 401
 assert validate_status == bool(False)
-assert 'id from origin tidak boleh kosong.' in validate_message
-
-
-pprint(login.json())
+assert 'Unauthorized' in validate_message
+# pprint(logout.json())
 
 
 
