@@ -5,7 +5,7 @@ from assertpy import assert_that
 
 setting_env = stagging
 url_login = f"{setting_env}/api/v2/customer/auth/login/email"
-url_list_merchant = f"{setting_env}/api/v2/customer/merchants"
+url_index_menu = f"{setting_env}/api/v2/customer/menus"
 email = "kopiruangvirtual@gmail.com"
 kata_sandi = '12345678'
 wrong_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc3RhZ2luZy5hZG1pbnN1cnBsdXMubmV0XC9hcGlcL3YyXC9jdXN0b21lclwvYXV0aFwvbG9naW5cL2VtYWlsIiwiaWF0IjoxNjE2ODA1NzI2LCJleHAiOjE2MTkzOTc3MjYsIm5iZiI6MTYxNjgwNTcyNiwianRpIjoib05ESmxFRE5hSzNrN2RtVyIsInN1YiI6NDEyNiwicHJ2IjoiMjc0MTA1ZGE2ZTk1YmVmMjgwNzc4NmRkODczODg2N2NmOWMwMmFhYiJ9.fj51xIfQrqleRvdSJUbWcdrvsxQPUn8HpccnOmTgPDI'
@@ -19,20 +19,20 @@ headers = {
 }
 login = requests.post(url_login, params=param, headers=headers)
 param2 = {
-    'latitude': '-6.3823317',
-    'longitude': ''
+    'type': 'qaqaqa'
 }
 headers2 = {
     "Accept": "application/json",
     "Authorization": f"Bearer {login.json().get('token')}"
 }
-list_merchant = requests.get(url_list_merchant, params=param2, headers=headers2)
+index_menu = requests.get(url_index_menu, params=param2, headers=headers2)
 
-validate_status = list_merchant.json().get('success')
-validate_message = list_merchant.json().get('message')['longitude']
+validate_status = index_menu.json().get('success')
+validate_message = index_menu.json().get('message')['type']
 
-assert list_merchant.status_code == 422
+assert index_menu.status_code == 422
 assert validate_status == bool(False)
-assert 'longitude tidak boleh kosong.' in validate_message
+assert 'type yang dipilih tidak tersedia.' in validate_message
 
-print(list_merchant.json())
+
+# print(validate_data)
