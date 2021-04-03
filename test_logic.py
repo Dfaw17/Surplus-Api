@@ -24,13 +24,17 @@ headers2 = {
     "Authorization": f"Bearer {login.json().get('token')}"
 }
 index = requests.get(url_index_address, headers=headers2)
-delete = requests.delete(url_index_address+str(index.json().get('data')[0]['id']), headers=headers2)
+headers3 = {
+    "Accept": "application/json",
+    "Authorization": f"Bearer {login.json().get('token')}"
+}
+delete = requests.delete(url_index_address+'66666', headers=headers3)
 
 validate_status = delete.json().get('success')
 validate_message = delete.json().get('message')
 
-assert delete.status_code == 200
-assert validate_status == bool(True)
-assert 'Data alamat berhasil dihapus' in validate_message
+assert delete.status_code == 404
+assert validate_status == bool(False)
+assert 'Alamat tidak ditemukan' in validate_message
 
 print(delete.json())
