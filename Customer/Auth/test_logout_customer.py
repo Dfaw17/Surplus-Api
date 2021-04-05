@@ -2,6 +2,7 @@ import requests
 from env import stagging
 from pprint import pprint
 from assertpy import assert_that
+import time
 
 class TestCustomerLogout:
 
@@ -23,6 +24,7 @@ class TestCustomerLogout:
             "Accept": "application/json"
         }
         login = requests.post(url_login, params=param, headers=headers)
+        time.sleep(1)
         param2 = {
             'token': login.json().get('token')
         }

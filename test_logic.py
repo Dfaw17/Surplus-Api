@@ -5,7 +5,7 @@ from assertpy import assert_that
 
 setting_env = stagging
 url_login = f"{setting_env}/api/v2/customer/auth/login/email"
-url_show_profiles = f"{setting_env}/api/v2/customer/profiles"
+url_list_voucher = f"{setting_env}/api/v2/customer/vouchers"
 email = "kopiruangvirtual@gmail.com"
 kata_sandi = '12345678'
 wrong_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc3RhZ2luZy5hZG1pbnN1cnBsdXMubmV0XC9hcGlcL3YyXC9jdXN0b21lclwvYXV0aFwvbG9naW5cL2VtYWlsIiwiaWF0IjoxNjE2ODA1NzI2LCJleHAiOjE2MTkzOTc3MjYsIm5iZiI6MTYxNjgwNTcyNiwianRpIjoib05ESmxFRE5hSzNrN2RtVyIsInN1YiI6NDEyNiwicHJ2IjoiMjc0MTA1ZGE2ZTk1YmVmMjgwNzc4NmRkODczODg2N2NmOWMwMmFhYiJ9.fj51xIfQrqleRvdSJUbWcdrvsxQPUn8HpccnOmTgPDI'
@@ -20,9 +20,9 @@ headers = {
 login = requests.post(url_login, params=param, headers=headers)
 headers2 = {
     "Accept": "application/json",
-    "Authorization": ""
+    "Authorization": wrong_token
 }
-show_profile = requests.get(url_show_profiles, headers=headers2)
+show_profile = requests.get(url_list_voucher, headers=headers2)
 
 validate_status = show_profile.json().get('success')
 validate_message = show_profile.json().get('message')
