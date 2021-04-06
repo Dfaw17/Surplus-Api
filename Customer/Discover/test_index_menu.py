@@ -3,9 +3,9 @@ from env import stagging
 from pprint import pprint
 from assertpy import assert_that
 
-class TestCustomerIndexMenu:
 
-    global setting_env,url_login,url_index_menu,email,kata_sandi,wrong_token
+class TestCustomerIndexMenu:
+    global setting_env, url_login, url_index_menu, email, kata_sandi, wrong_token
 
     setting_env = stagging
     url_login = f"{setting_env}/api/v2/customer/auth/login/email"
@@ -39,15 +39,14 @@ class TestCustomerIndexMenu:
         assert index_menu.status_code == 200
         assert validate_status == bool(True)
         assert 'Data menu terlewat berhasil ditemukan.' in validate_message
-        assert_that(validate_data).contains_only('id', 'merchant_id', 'nama_menu_makanan',
-                                                 'merchant_kategori_makanan_id',
-                                                 'deskripsi', 'waktu_mulai_penjemputan', 'waktu_akhir_penjemputan',
-                                                 'harga_asli', 'harga_jual', 'stock', 'is_non_halal', 'total_terjual',
-                                                 'is_missed', 'is_active', 'waktu_missed', 'image_thumbnail',
-                                                 'created_at',
-                                                 'updated_at', 'is_tomorrow', 'menu_image', 'nama_merchant',
-                                                 'alamat_merchant',
-                                                 'merchant_logo', 'distance')
+        assert_that(validate_data).contains_only('stock_id', 'merchant_id', 'menu_id', 'nama_menu_makanan',
+                                                 'merchant_kategori_makanan_id', 'deskripsi', 'harga_asli',
+                                                 'harga_jual', 'is_non_halal', 'image_thumbnail', 'created_at',
+                                                 'updated_at', 'waktu_mulai_penjemputan', 'waktu_akhir_penjemputan',
+                                                 'stock', 'is_active', 'is_missed', 'is_tomorrow', 'waktu_missed',
+                                                 'total_terjual', 'expiry_date_string', 'nama_merchant',
+                                                 'alamat_merchant', 'merchant_logo', 'merchant_branch_status',
+                                                 'merchant_central_id', 'distance', 'branches')
 
     def test_index_menu_wrong_token(self):
         param = {
@@ -172,5 +171,3 @@ class TestCustomerIndexMenu:
         assert index_menu.status_code == 422
         assert validate_status == bool(False)
         assert 'type tidak boleh kosong.' in validate_message
-
-

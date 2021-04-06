@@ -3,9 +3,9 @@ from env import stagging
 from pprint import pprint
 from assertpy import assert_that
 
-class TestCustomerListMerchant:
 
-    global setting_env,url_login,url_list_merchant,email,kata_sandi,wrong_token
+class TestCustomerListMerchant:
+    global setting_env, url_login, url_list_merchant, email, kata_sandi, wrong_token
 
     setting_env = stagging
     url_login = f"{setting_env}/api/v2/customer/auth/login/email"
@@ -42,9 +42,8 @@ class TestCustomerListMerchant:
         assert list_merchant.status_code == 200
         assert validate_status == bool(True)
         assert 'Data merchant berhasil ditemukan.' in validate_message
-        assert_that(validate_data).contains_only('merchant_id', 'nama_merchant', 'merchant_logo', 'rating',
-                                                 'total_order',
-                                                 'distance')
+        assert_that(validate_data).contains_only('merchant_id', 'nama_merchant', 'merchant_logo',
+                                                 'merchant_branch_status', 'merchant_central_id', 'distance')
         assert_that(validate_merchant_id).is_not_none()
         assert_that(validate_nama_merchant).is_not_none()
 

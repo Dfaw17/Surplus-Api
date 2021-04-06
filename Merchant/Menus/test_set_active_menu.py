@@ -33,7 +33,8 @@ class TestSetActiveMenu :
             "is_tomorrow": "0",
             "stock": "100",
             "waktu_mulai_penjemputan": "01:00",
-            "waktu_akhir_penjemputan": "23:00"
+            "waktu_akhir_penjemputan": "23:00",
+            'expiry_date_string':'Exp 20 Juni'
         }
 
         response2 = requests.patch(set_active_menu + data_id + "/active", data=param2, headers=headers)
@@ -50,8 +51,8 @@ class TestSetActiveMenu :
         assert validate_status == bool(True)
         assert "berhasil diaktifkan" in validate_message
         assert validate_menu == data_id
-        assert validate_status_menu == "0"
-        assert validate_menu_stock == "100"
+        assert validate_status_menu == 0
+        assert validate_menu_stock == 100
         assert validate_menu_start == "01:00"
         assert validate_menu_end == "23:00"
 
@@ -75,7 +76,8 @@ class TestSetActiveMenu :
             "is_tomorrow": "0",
             "stock": "100",
             "waktu_mulai_penjemputan": "01:00",
-            "waktu_akhir_penjemputan": "23:00"
+            "waktu_akhir_penjemputan": "23:00",
+            'expiry_date_string':'Exp 20 Juni'
         }
 
         response2 = requests.patch(set_active_menu + "666" + "/active", data=param2, headers=headers)

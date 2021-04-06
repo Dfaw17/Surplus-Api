@@ -110,5 +110,5 @@ class TestShowMerchantMenu :
 
         assert validate_status == bool(False)
         assert response.status_code == 404
-        assert validate_message == "Data menu tidak ditemukan."
+        assert validate_message == "Data tidak ditemukan"
 

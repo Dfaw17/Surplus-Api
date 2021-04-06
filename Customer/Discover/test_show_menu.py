@@ -33,13 +33,14 @@ class TestCustomerShowMenu:
             "Authorization": f"Bearer {login.json().get('token')}"
         }
         discover = requests.get(url_discover, params=param2, headers=headers2)
-        show_menu = requests.get(url_show_menu + str(discover.json().get('data')['nearby_menu'][0]['id']),
+        show_menu = requests.get(url_show_menu + str(discover.json().get('data')['nearby_menu'][0]['stock_id']),
                                  params=param2, headers=headers2)
 
         validate_status = show_menu.json().get('success')
         validate_message = show_menu.json().get('message')
-        validate_data_menu = show_menu.json().get('data')['id']
+        validate_data_menu = show_menu.json().get('data')['stock_id']
         validate_merchant_id = show_menu.json().get('data')['merchant_id']
+        validate_data = show_menu.json().get('data')
         validate_nama_menu_makanan = show_menu.json().get('data')['nama_menu_makanan']
         validate_merchant_kategori_makanan_id = show_menu.json().get('data')['merchant_kategori_makanan_id']
 
@@ -48,6 +49,14 @@ class TestCustomerShowMenu:
         assert show_menu.status_code == 200
         assert_that([validate_data_menu, validate_nama_menu_makanan, validate_merchant_kategori_makanan_id,
                      validate_merchant_id]).is_not_empty()
+        assert_that(validate_data).contains_only('stock_id', 'merchant_id', 'menu_id', 'nama_menu_makanan',
+                                                 'merchant_kategori_makanan_id', 'deskripsi', 'harga_asli',
+                                                 'harga_jual', 'is_non_halal', 'image_thumbnail', 'created_at',
+                                                 'updated_at', 'waktu_mulai_penjemputan', 'waktu_akhir_penjemputan',
+                                                 'stock', 'is_active', 'is_missed', 'is_tomorrow', 'waktu_missed',
+                                                 'total_terjual', 'expiry_date_string', 'merchant_name',
+                                                 'merchant_address', 'merchant_latitude', 'merchant_longitude',
+                                                 'merchant_logo', 'menu_image', 'merchant_distance')
 
     def test_show_menu_without_token(self):
         param = {
@@ -75,7 +84,7 @@ class TestCustomerShowMenu:
             "Accept": "application/json",
             "Authorization": ""
         }
-        show_menu = requests.get(url_show_menu + str(discover.json().get('data')['nearby_menu'][0]['id']),
+        show_menu = requests.get(url_show_menu + str(discover.json().get('data')['nearby_menu'][0]['stock_id']),
                                  params=param3, headers=headers3)
 
         validate_status = show_menu.json().get('success')
@@ -110,7 +119,7 @@ class TestCustomerShowMenu:
             "Accept": "application/json",
             "Authorization": wrong_token
         }
-        show_menu = requests.get(url_show_menu + str(discover.json().get('data')['nearby_menu'][0]['id']),
+        show_menu = requests.get(url_show_menu + str(discover.json().get('data')['nearby_menu'][0]['stock_id']),
                                  params=param3, headers=headers3)
 
         validate_status = show_menu.json().get('success')
@@ -145,7 +154,7 @@ class TestCustomerShowMenu:
             "Accept": "application/json",
             "Authorization": f"Bearer {login.json().get('token')}"
         }
-        show_menu = requests.get(url_show_menu + str(discover.json().get('data')['nearby_menu'][0]['id']),
+        show_menu = requests.get(url_show_menu + str(discover.json().get('data')['nearby_menu'][0]['stock_id']),
                                  params=param3, headers=headers3)
 
         validate_status = show_menu.json().get('success')
@@ -180,7 +189,7 @@ class TestCustomerShowMenu:
             "Accept": "application/json",
             "Authorization": f"Bearer {login.json().get('token')}"
         }
-        show_menu = requests.get(url_show_menu + str(discover.json().get('data')['nearby_menu'][0]['id']),
+        show_menu = requests.get(url_show_menu + str(discover.json().get('data')['nearby_menu'][0]['stock_id']),
                                  params=param3, headers=headers3)
 
         validate_status = show_menu.json().get('success')
@@ -214,7 +223,7 @@ class TestCustomerShowMenu:
             "Accept": "application/json",
             "Authorization": f"Bearer {login.json().get('token')}"
         }
-        show_menu = requests.get(url_show_menu + str(discover.json().get('data')['nearby_menu'][0]['id']),
+        show_menu = requests.get(url_show_menu + str(discover.json().get('data')['nearby_menu'][0]['stock_id']),
                                  params=param3, headers=headers3)
 
         validate_status = show_menu.json().get('success')
@@ -250,7 +259,7 @@ class TestCustomerShowMenu:
             "Accept": "application/json",
             "Authorization": f"Bearer {login.json().get('token')}"
         }
-        show_menu = requests.get(url_show_menu + str(discover.json().get('data')['nearby_menu'][0]['id']),
+        show_menu = requests.get(url_show_menu + str(discover.json().get('data')['nearby_menu'][0]['stock_id']),
                                  params=param3, headers=headers3)
 
         validate_status = show_menu.json().get('success')
@@ -285,7 +294,7 @@ class TestCustomerShowMenu:
             "Accept": "application/json",
             "Authorization": f"Bearer {login.json().get('token')}"
         }
-        show_menu = requests.get(url_show_menu + str(discover.json().get('data')['nearby_menu'][0]['id']),
+        show_menu = requests.get(url_show_menu + str(discover.json().get('data')['nearby_menu'][0]['stock_id']),
                                  params=param3, headers=headers3)
 
         validate_status = show_menu.json().get('success')
@@ -319,7 +328,7 @@ class TestCustomerShowMenu:
             "Accept": "application/json",
             "Authorization": f"Bearer {login.json().get('token')}"
         }
-        show_menu = requests.get(url_show_menu + str(discover.json().get('data')['nearby_menu'][0]['id']),
+        show_menu = requests.get(url_show_menu + str(discover.json().get('data')['nearby_menu'][0]['stock_id']),
                                  params=param3, headers=headers3)
 
         validate_status = show_menu.json().get('success')
@@ -430,6 +439,6 @@ class TestCustomerShowMenu:
         validate_status = show_menu.json().get('success')
         validate_message = show_menu.json().get('message')
 
-        assert show_menu.status_code == 404
+        assert show_menu.status_code == 500
         assert validate_status == bool(False)
-        assert 'Data menu tidak ditemukan' in validate_message
+        assert 'Aduh!' in validate_message
