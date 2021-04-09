@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="adjustment branch feature merchant and customer">
+      <change afterPath="$PROJECT_DIR$/1Merchant/Branch/index.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Customer/Forum/test_show_forum.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1617684128.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1617784188.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1617784480.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1617942374.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1617942946.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1617949110.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order-0.10.0.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order-0.10.0.dist-info/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order-0.10.0.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order-0.10.0.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order-0.10.0.dist-info/REQUESTED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order-0.10.0.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order-0.10.0.dist-info/entry_points.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order-0.10.0.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order/_version.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order/sorter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merchant/Auth/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Auth/test_login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merchant/Auth/test_logout.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Auth/test_logout.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merchant/Auth/test_password_reset.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Auth/test_password_reset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merchant/Menus/test_delete_merchant_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Menus/test_delete_merchant_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merchant/Menus/test_get_all_categories.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Menus/test_get_all_categories.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merchant/Menus/test_get_all_merchant_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Menus/test_get_all_merchant_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merchant/Menus/test_insert_merchant_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Menus/test_insert_merchant_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merchant/Menus/test_set_active_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Menus/test_set_active_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merchant/Menus/test_show_merchant_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Menus/test_show_merchant_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merchant/Menus/test_update_merchant_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Menus/test_update_merchant_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merchant/Order/test_index.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Order/test_index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merchant/Order/test_show.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Order/test_show.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merchant/Profiles/test_show_profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Profiles/test_show_profile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merchant/Reports/test_history_income.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Reports/test_history_income.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merchant/Reports/test_history_transaction.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Reports/test_history_transaction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/report/output.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report/report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_logic.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1pVHU0F00DG6Zhubkb2j4zUwkjN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dfaww\PycharmProjects\API_Surplus\report" />
+      <recent name="C:\Users\dfaww\PycharmProjects\API_Surplus" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.test_logic">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="API_Surplus" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_get_all_categories" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="API_Surplus" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_merchant/test_menus" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_merchant/test_menus/test_get_all_categories.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_logic" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\dfaww\PycharmProjects\API_Surplus\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_logic.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_logic2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="API_Surplus" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_logic2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_login" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="API_Surplus" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_merchant/test_auth" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_merchant/test_auth/test_login.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test_logic" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.test_logic2" />
+        <item itemvalue="Python.test_get_all_categories" />
+        <item itemvalue="Python.test_login" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="" />
+      <created>1615261351900</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615261351900</updated>
+    </task>
+    <task id="LOCAL-00001" summary="add test scenario logout api positive &amp; negative">
+      <created>1615279031551</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1615279031551</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add test scenario reset password api positive &amp; negative">
+      <created>1615281237477</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1615281237477</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add test scenario get all categories positive &amp; negative">
+      <created>1615419009422</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1615419009422</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add test scenario test show profile positive &amp; negative">
+      <created>1615421187936</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1615421187936</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add test scenario test get all merchant menu positive &amp; negative">
+      <created>1615422442099</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1615422442099</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Refactor Code For Setting Env Testing">
+      <created>1615616236170</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1615616236170</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add test scenario test show merchant menu positive &amp; negative">
+      <created>1615638076867</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1615638076867</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add library pytest html reporter for test result automation API Surplus">
+      <created>1615700350685</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1615700350685</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fix Bugs">
+      <created>1616311233507</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1616311233507</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add test scenario test update merchant menu positive &amp; negative">
+      <created>1616326569732</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1616326569732</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add test scenario test delete merchant menu positive &amp; negative">
+      <created>1616332212078</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1616332212078</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add test scenario test set active menu positive &amp; negative">
+      <created>1616581097814</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1616581097814</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add test scenario test set active menu positive &amp; negative">
+      <created>1616581154657</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1616581154657</updated>
+    </task>
+    <task id="LOCAL-00014" summary="re-push">
+      <created>1616581512000</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1616581512000</updated>
+    </task>
+    <task id="LOCAL-00015" summary="add test scenario test merchant order index positive &amp; negative">
+      <created>1616628760804</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1616628760804</updated>
+    </task>
+    <task id="LOCAL-00016" summary="add test scenario test merchant order show positive &amp; negative">
+      <created>1616646099469</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1616646099469</updated>
+    </task>
+    <task id="LOCAL-00017" summary="add test scenario test merchant order history transaction positive &amp; negative">
+      <created>1616659273981</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1616659273982</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add test scenario test customer register email positive &amp; negative">
+      <created>1616669204323</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1616669204323</updated>
+    </task>
+    <task id="LOCAL-00019" summary="add file bat to auto run test without open the project">
+      <created>1616724215303</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1616724215303</updated>
+    </task>
+    <task id="LOCAL-00020" summary="add test scenario test customer test register oauth positive &amp; negative">
+      <created>1616731519044</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1616731519044</updated>
+    </task>
+    <task id="LOCAL-00021" summary="add test scenario test customer test resend otp positive &amp; negative">
+      <created>1616733255187</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1616733255187</updated>
+    </task>
+    <task id="LOCAL-00022" summary="add test scenario test customer test login email positive &amp; negative">
+      <created>1616742655646</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1616742655646</updated>
+    </task>
+    <task id="LOCAL-00023" summary="add test scenario test customer test register progres positive &amp; negative">
+      <created>1616745292529</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1616745292529</updated>
+    </task>
+    <task id="LOCAL-00024" summary="add test scenario test customer test check email positive &amp; negative">
+      <created>1616746689108</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1616746689108</updated>
+    </task>
+    <task id="LOCAL-00025" summary="add test scenario test customer test forget password positive &amp; negative">
+      <created>1616748186642</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1616748186642</updated>
+    </task>
+    <task id="LOCAL-00026" summary="add test scenario test customer test login oauth positive &amp; negative">
+      <created>1616805621101</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1616805621101</updated>
+    </task>
+    <task id="LOCAL-00027" summary="add test scenario test customer test logout positive &amp; negative">
+      <created>1616807401930</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1616807401930</updated>
+    </task>
+    <task id="LOCAL-00028" summary="add test scenario test customer discover menu positive &amp; negative">
+      <created>1616837112069</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1616837112069</updated>
+    </task>
+    <task id="LOCAL-00029" summary="add test scenario test customer search menu positive &amp; negative">
+      <created>1616894643796</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1616894643796</updated>
+    </task>
+    <task id="LOCAL-00030" summary="add test scenario test customer show merchant positive &amp; negative">
+      <created>1616997761440</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1616997761440</updated>
+    </task>
+    <task id="LOCAL-00031" summary="add test scenario test customer like merchant positive &amp; negative">
+      <created>1617172947182</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1617172947182</updated>
+    </task>
+    <task id="LOCAL-00032" summary="add test scenario test customer list merchant positive &amp; negative">
+      <created>1617174916936</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1617174916936</updated>
+    </task>
+    <task id="LOCAL-00033" summary="add test scenario test customer index menu positive &amp; negative">
+      <created>1617176279204</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1617176279204</updated>
+    </task>
+    <task id="LOCAL-00034" summary="add Automation scenario test customer index Address positive &amp; negative">
+      <created>1617179464646</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1617179464646</updated>
+    </task>
+    <task id="LOCAL-00035" summary="add Automation scenario test customer show Address positive &amp; negative">
+      <created>1617248350153</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1617248350153</updated>
+    </task>
+    <task id="LOCAL-00036" summary="add Automation scenario test customer create Address positive &amp; negative">
+      <created>1617424288438</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1617424288438</updated>
+    </task>
+    <task id="LOCAL-00037" summary="add Automation scenario test customer delete Address positive &amp; negative">
+      <created>1617449243589</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1617449243589</updated>
+    </task>
+    <task id="LOCAL-00038" summary="add Automation scenario test customer show profiles positive &amp; negative">
+      <created>1617600012636</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1617600012636</updated>
+    </task>
+    <task id="LOCAL-00039" summary="add Automation scenario test customer list vouchers profiles positive &amp; negative">
+      <created>1617597579353</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1617597579353</updated>
+    </task>
+    <task id="LOCAL-00040" summary="add Automation scenario test customer list merchant fav profiles positive &amp; negative">
+      <created>1617599105459</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1617599105459</updated>
+    </task>
+    <task id="LOCAL-00041" summary="add Automation scenario test customer update private data profiles positive &amp; negative">
+      <created>1617604502800</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1617604502800</updated>
+    </task>
+    <task id="LOCAL-00042" summary="add Automation scenario test customer update password profiles positive &amp; negative">
+      <created>1617610589309</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1617610589309</updated>
+    </task>
+    <task id="LOCAL-00043" summary="add Automation scenario test customer index forum positive &amp; negative">
+      <created>1617615526758</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1617615526758</updated>
+    </task>
+    <task id="LOCAL-00044" summary="adjustment branch feature merchant and customer">
+      <created>1617675302089</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1617675302089</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="add test scenario test customer test register oauth positive &amp; negative" />
+    <MESSAGE value="add test scenario test customer test resend otp positive &amp; negative" />
+    <MESSAGE value="add test scenario test customer test login email positive &amp; negative" />
+    <MESSAGE value="add test scenario test customer test register progres positive &amp; negative" />
+    <MESSAGE value="add test scenario test customer test check email positive &amp; negative" />
+    <MESSAGE value="add test scenario test customer test forget password positive &amp; negative" />
+    <MESSAGE value="add test scenario test customer test login oauth positive &amp; negative" />
+    <MESSAGE value="add test scenario test customer test logout positive &amp; negative" />
+    <MESSAGE value="add test scenario test customer discover menu positive &amp; negative" />
+    <MESSAGE value="add test scenario test customer search menu positive &amp; negative" />
+    <MESSAGE value="add test scenario test customer show merchant positive &amp; negative" />
+    <MESSAGE value="add test scenario test customer like merchant positive &amp; negative" />
+    <MESSAGE value="add test scenario test customer list merchant positive &amp; negative" />
+    <MESSAGE value="add test scenario test customer index menu positive &amp; negative" />
+    <MESSAGE value="add Automation scenario test customer index Address positive &amp; negative" />
+    <MESSAGE value="add Automation scenario test customer show Address positive &amp; negative" />
+    <MESSAGE value="add Automation scenario test customer create Address positive &amp; negative" />
+    <MESSAGE value="add Automation scenario test customer delete Address positive &amp; negative" />
+    <MESSAGE value="add Automation scenario test customer show profiles positive &amp; negative" />
+    <MESSAGE value="add Automation scenario test customer list vouchers profiles positive &amp; negative" />
+    <MESSAGE value="add Automation scenario test customer list merchant fav profiles positive &amp; negative" />
+    <MESSAGE value="add Automation scenario test customer update private data profiles positive &amp; negative" />
+    <MESSAGE value="add Automation scenario test customer update password profiles positive &amp; negative" />
+    <MESSAGE value="add Automation scenario test customer index forum positive &amp; negative" />
+    <MESSAGE value="adjustment branch feature merchant and customer" />
+    <option name="LAST_COMMIT_MESSAGE" value="adjustment branch feature merchant and customer" />
+  </component>
+</project>
