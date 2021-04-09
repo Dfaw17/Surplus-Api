@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="add test scenario customer forum get comment positive &amp; negative">
-      <change afterPath="$PROJECT_DIR$/Customer/Forum/test_like_unlike.py" afterDir="false" />
+    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="add test scenario customer forum like unlike positive &amp; negative">
+      <change afterPath="$PROJECT_DIR$/Customer/Forum/test_store_forum.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1617952392.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Auth/test_logout_customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Customer/Auth/test_logout_customer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive/output_1617949263.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/report/output.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report/report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_logic.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -503,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617950688366</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="add test scenario customer forum like unlike positive &amp; negative">
+      <created>1617952292697</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1617952292697</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -532,7 +544,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add test scenario test customer test login email positive &amp; negative" />
     <MESSAGE value="add test scenario test customer test register progres positive &amp; negative" />
     <MESSAGE value="add test scenario test customer test check email positive &amp; negative" />
     <MESSAGE value="add test scenario test customer test forget password positive &amp; negative" />
@@ -557,6 +568,7 @@
     <MESSAGE value="adjustment branch feature merchant and customer" />
     <MESSAGE value="add test scenario customer forum show positive &amp; negative" />
     <MESSAGE value="add test scenario customer forum get comment positive &amp; negative" />
-    <option name="LAST_COMMIT_MESSAGE" value="add test scenario customer forum get comment positive &amp; negative" />
+    <MESSAGE value="add test scenario customer forum like unlike positive &amp; negative" />
+    <option name="LAST_COMMIT_MESSAGE" value="add test scenario customer forum like unlike positive &amp; negative" />
   </component>
 </project>

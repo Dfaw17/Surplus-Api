@@ -46,6 +46,7 @@ class TestCustomerLogout:
             "Accept": "application/json"
         }
         login = requests.post(url_login, params=param, headers=headers)
+        time.sleep(1)
         param2 = {
             'token': wrong_token
         }
