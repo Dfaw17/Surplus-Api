@@ -1,41 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="adjustment branch feature merchant and customer">
-      <change afterPath="$PROJECT_DIR$/1Merchant/Branch/index.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Customer/Forum/test_show_forum.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report/archive/output_1617684128.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report/archive/output_1617784188.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report/archive/output_1617784480.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report/archive/output_1617942374.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report/archive/output_1617942946.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report/archive/output_1617949110.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order-0.10.0.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order-0.10.0.dist-info/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order-0.10.0.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order-0.10.0.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order-0.10.0.dist-info/REQUESTED" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order-0.10.0.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order-0.10.0.dist-info/entry_points.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order-0.10.0.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order/_version.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pytest_order/sorter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merchant/Auth/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Auth/test_login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merchant/Auth/test_logout.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Auth/test_logout.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merchant/Auth/test_password_reset.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Auth/test_password_reset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merchant/Menus/test_delete_merchant_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Menus/test_delete_merchant_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merchant/Menus/test_get_all_categories.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Menus/test_get_all_categories.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merchant/Menus/test_get_all_merchant_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Menus/test_get_all_merchant_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merchant/Menus/test_insert_merchant_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Menus/test_insert_merchant_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merchant/Menus/test_set_active_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Menus/test_set_active_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merchant/Menus/test_show_merchant_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Menus/test_show_merchant_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merchant/Menus/test_update_merchant_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Menus/test_update_merchant_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merchant/Order/test_index.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Order/test_index.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merchant/Order/test_show.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Order/test_show.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merchant/Profiles/test_show_profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Profiles/test_show_profile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merchant/Reports/test_history_income.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Reports/test_history_income.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merchant/Reports/test_history_transaction.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Reports/test_history_transaction.py" afterDir="false" />
+    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="add test scenario customer forum show positive &amp; negative">
+      <change afterPath="$PROJECT_DIR$/Customer/Forum/test_get_comment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1617950624.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytest_html_report.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/report/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/report/output.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report/report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_logic.py" afterDir="false" />
@@ -516,7 +487,21 @@
       <option name="project" value="LOCAL" />
       <updated>1617675302089</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="adjustment branch feature merchant and customer">
+      <created>1617949284320</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1617949284320</updated>
+    </task>
+    <task id="LOCAL-00046" summary="add test scenario customer forum show positive &amp; negative">
+      <created>1617949345692</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1617949345692</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -545,7 +530,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add test scenario test customer test register oauth positive &amp; negative" />
     <MESSAGE value="add test scenario test customer test resend otp positive &amp; negative" />
     <MESSAGE value="add test scenario test customer test login email positive &amp; negative" />
     <MESSAGE value="add test scenario test customer test register progres positive &amp; negative" />
@@ -570,6 +554,7 @@
     <MESSAGE value="add Automation scenario test customer update password profiles positive &amp; negative" />
     <MESSAGE value="add Automation scenario test customer index forum positive &amp; negative" />
     <MESSAGE value="adjustment branch feature merchant and customer" />
-    <option name="LAST_COMMIT_MESSAGE" value="adjustment branch feature merchant and customer" />
+    <MESSAGE value="add test scenario customer forum show positive &amp; negative" />
+    <option name="LAST_COMMIT_MESSAGE" value="add test scenario customer forum show positive &amp; negative" />
   </component>
 </project>
