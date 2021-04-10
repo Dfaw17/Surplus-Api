@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="add test scenario customer forum store comment positive &amp; negative">
-      <change afterPath="$PROJECT_DIR$/Customer/Orders/test_index_voucher.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report/archive/output_1617955063.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report/archive/output_1618029703.json" afterDir="false" />
+    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="add test scenario customer order index voucher positive &amp; negative">
+      <change afterPath="$PROJECT_DIR$/Customer/Orders/test_show_voucher.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1618030027.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1618030868.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/report/output.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report/report.html" afterDir="false" />
@@ -177,13 +177,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615261351900</updated>
-    </task>
-    <task id="LOCAL-00002" summary="add test scenario reset password api positive &amp; negative">
-      <created>1615281237477</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1615281237477</updated>
     </task>
     <task id="LOCAL-00003" summary="add test scenario get all categories positive &amp; negative">
       <created>1615419009422</created>
@@ -521,7 +514,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617957442782</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="add test scenario customer order index voucher positive &amp; negative">
+      <created>1618030056321</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1618030056321</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -550,7 +550,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add test scenario test customer test forget password positive &amp; negative" />
     <MESSAGE value="add test scenario test customer test login oauth positive &amp; negative" />
     <MESSAGE value="add test scenario test customer test logout positive &amp; negative" />
     <MESSAGE value="add test scenario test customer discover menu positive &amp; negative" />
@@ -575,6 +574,7 @@
     <MESSAGE value="add test scenario customer forum like unlike positive &amp; negative" />
     <MESSAGE value="add test scenario customer forum store positive &amp; negative" />
     <MESSAGE value="add test scenario customer forum store comment positive &amp; negative" />
-    <option name="LAST_COMMIT_MESSAGE" value="add test scenario customer forum store comment positive &amp; negative" />
+    <MESSAGE value="add test scenario customer order index voucher positive &amp; negative" />
+    <option name="LAST_COMMIT_MESSAGE" value="add test scenario customer order index voucher positive &amp; negative" />
   </component>
 </project>
