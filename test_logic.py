@@ -27,17 +27,15 @@ headers2 = {
 param2 = {
     'origin': dari,
     'destination': ke,
-    'id_stocks[0]': '54'
+    'id_stocks[0]': 'aaaaa'
 }
-gosend_estimate = requests.get(url_gosend_estimate,params=param2, headers=headers2)
+gosend_estimate = requests.get(url_gosend_estimate, params=param2, headers=headers2)
 
-# validate_status = show_voucher.json().get('success')
-# validate_message = show_voucher.json().get('message')
-#
-#
-# assert show_voucher.status_code == 200
-# assert validate_status == bool(True)
-# assert "Voucher berhasil ditemukan" in validate_message
+validate_status = gosend_estimate.json().get('success')
+validate_message = gosend_estimate.json().get('message')
 
+assert gosend_estimate.status_code == 400
+assert validate_status == bool(False)
+assert "Menu tidak tersedia" in validate_message
 
 pprint(gosend_estimate.json())
