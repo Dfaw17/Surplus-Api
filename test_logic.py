@@ -5,9 +5,7 @@ from assertpy import assert_that
 
 setting_env = stagging
 url_login = f"{setting_env}/api/v2/customer/auth/login/email"
-url_gosend_estimate = f"{setting_env}/api/v2/customer/gosend/estimate"
-dari = '-6.3772882,107.1062917'
-ke = '-6.3823027,107.1162164'
+url_list_order = f"{setting_env}/api/v2/customer/orders"
 email = "kopiruangvirtual@gmail.com"
 kata_sandi = '12345678'
 wrong_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc3RhZ2luZy5hZG1pbnN1cnBsdXMubmV0XC9hcGlcL3YyXC9jdXN0b21lclwvYXV0aFwvbG9naW5cL2VtYWlsIiwiaWF0IjoxNjE2ODA1NzI2LCJleHAiOjE2MTkzOTc3MjYsIm5iZiI6MTYxNjgwNTcyNiwianRpIjoib05ESmxFRE5hSzNrN2RtVyIsInN1YiI6NDEyNiwicHJ2IjoiMjc0MTA1ZGE2ZTk1YmVmMjgwNzc4NmRkODczODg2N2NmOWMwMmFhYiJ9.fj51xIfQrqleRvdSJUbWcdrvsxQPUn8HpccnOmTgPDI'
@@ -25,17 +23,16 @@ headers2 = {
     "Authorization": f"Bearer {login.json().get('token')}"
 }
 param2 = {
-    'origin': dari,
-    'destination': ke,
-    'id_stocks[0]': 'aaaaa'
+    'status_order': ''
 }
-gosend_estimate = requests.get(url_gosend_estimate, params=param2, headers=headers2)
+list_order = requests.get(url_list_order, params=param2, headers=headers2)
 
-validate_status = gosend_estimate.json().get('success')
-validate_message = gosend_estimate.json().get('message')
+validate_status = list_order.json().get('success')
+validate_message = list_order.json().get('message')['status_order']
 
-assert gosend_estimate.status_code == 400
+assert list_order.status_code == 422
 assert validate_status == bool(False)
-assert "Menu tidak tersedia" in validate_message
+assert 'Status pesanan tidak boleh kosong.' in validate_message
 
-pprint(gosend_estimate.json())
+
+# pprint(list_order.json())
