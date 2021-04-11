@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="add test scenario customer order list order&#10; positive &amp; negative">
-      <change afterPath="$PROJECT_DIR$/Customer/Orders/test_detail_order.py" afterDir="false" />
+    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="add test scenario customer order detail order&#10; positive &amp; negative">
+      <change afterPath="$PROJECT_DIR$/Customer/Orders/test_show_payment_status.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1618110546.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1618111361.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/report/output.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report/report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_logic.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -173,13 +177,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615261351900</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Refactor Code For Setting Env Testing">
-      <created>1615616236170</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1615616236170</updated>
     </task>
     <task id="LOCAL-00007" summary="add test scenario test show merchant menu positive &amp; negative">
       <created>1615638076867</created>
@@ -517,7 +514,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618050770961</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="add test scenario customer order detail order&#10; positive &amp; negative">
+      <created>1618103351327</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1618103351328</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -546,7 +550,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add test scenario test customer search menu positive &amp; negative" />
     <MESSAGE value="add test scenario test customer show merchant positive &amp; negative" />
     <MESSAGE value="add test scenario test customer like merchant positive &amp; negative" />
     <MESSAGE value="add test scenario test customer list merchant positive &amp; negative" />
@@ -571,6 +574,7 @@
     <MESSAGE value="add test scenario customer order show voucher positive &amp; negative" />
     <MESSAGE value="add test scenario customer order gosend estimate&#10; positive &amp; negative" />
     <MESSAGE value="add test scenario customer order list order&#10; positive &amp; negative" />
-    <option name="LAST_COMMIT_MESSAGE" value="add test scenario customer order list order&#10; positive &amp; negative" />
+    <MESSAGE value="add test scenario customer order detail order&#10; positive &amp; negative" />
+    <option name="LAST_COMMIT_MESSAGE" value="add test scenario customer order detail order&#10; positive &amp; negative" />
   </component>
 </project>
