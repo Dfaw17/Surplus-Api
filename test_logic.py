@@ -6,6 +6,7 @@ from assertpy import assert_that
 setting_env = stagging
 url_login = f"{setting_env}/api/v2/customer/auth/login/email"
 url_list_order = f"{setting_env}/api/v2/customer/orders"
+url_detail_order = f"{setting_env}/api/v2/customer/orders/"
 email = "kopiruangvirtual@gmail.com"
 kata_sandi = '12345678'
 wrong_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc3RhZ2luZy5hZG1pbnN1cnBsdXMubmV0XC9hcGlcL3YyXC9jdXN0b21lclwvYXV0aFwvbG9naW5cL2VtYWlsIiwiaWF0IjoxNjE2ODA1NzI2LCJleHAiOjE2MTkzOTc3MjYsIm5iZiI6MTYxNjgwNTcyNiwianRpIjoib05ESmxFRE5hSzNrN2RtVyIsInN1YiI6NDEyNiwicHJ2IjoiMjc0MTA1ZGE2ZTk1YmVmMjgwNzc4NmRkODczODg2N2NmOWMwMmFhYiJ9.fj51xIfQrqleRvdSJUbWcdrvsxQPUn8HpccnOmTgPDI'
@@ -23,16 +24,16 @@ headers2 = {
     "Authorization": f"Bearer {login.json().get('token')}"
 }
 param2 = {
-    'status_order': ''
+    'status_order': 'done'
 }
-list_order = requests.get(url_list_order, params=param2, headers=headers2)
+detail_order = requests.get(url_detail_order , headers=headers2)
 
-validate_status = list_order.json().get('success')
-validate_message = list_order.json().get('message')['status_order']
+validate_status = detail_order.json().get('success')
+validate_message = detail_order.json().get('message')['status_order']
 
-assert list_order.status_code == 422
+assert detail_order.status_code == 422
 assert validate_status == bool(False)
 assert 'Status pesanan tidak boleh kosong.' in validate_message
 
 
-# pprint(list_order.json())
+# pprint(validate_data['registrasi_order_number'])
