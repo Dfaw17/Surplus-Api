@@ -1,10 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="add test scenario customer order cancel order positive &amp; negative">
-      <change afterPath="$PROJECT_DIR$/Customer/Orders/test_finish_rating.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report/archive/output_1618143965.json" afterDir="false" />
+    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="add test scenario customer order finish rating positive &amp; negative">
+      <change afterPath="$PROJECT_DIR$/2Customer/Forum/test_checkout.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1618149882.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1618194040.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1618200791.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1618201114.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Address/test_create_address.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Address/test_create_address.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Address/test_delete_address.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Address/test_delete_address.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Address/test_index_address.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Address/test_index_address.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Address/test_show_address.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Address/test_show_address.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Auth/test_check_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Auth/test_check_email.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Auth/test_forget_password.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Auth/test_forget_password.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Auth/test_login_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Auth/test_login_email.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Auth/test_login_with_oauth.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Auth/test_login_with_oauth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Auth/test_logout_customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Auth/test_logout_customer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Auth/test_register_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Auth/test_register_email.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Auth/test_register_oauth.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Auth/test_register_oauth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Auth/test_register_progress.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Auth/test_register_progress.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Auth/test_resend_otp.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Auth/test_resend_otp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Discover/test_banner.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Discover/test_banner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Discover/test_discover_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Discover/test_discover_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Discover/test_index_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Discover/test_index_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Discover/test_like_merchant.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Discover/test_like_merchant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Discover/test_list_merchant.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Discover/test_list_merchant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Discover/test_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Discover/test_search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Discover/test_show_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Discover/test_show_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Discover/test_show_merchant.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Discover/test_show_merchant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Forum/test_get_comment.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Forum/test_get_comment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Forum/test_index_forum.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Forum/test_index_forum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Forum/test_like_unlike.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Forum/test_like_unlike.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Forum/test_show_forum.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Forum/test_show_forum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Forum/test_store_comment.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Forum/test_store_comment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Forum/test_store_forum.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Forum/test_store_forum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Orders/test_cancel_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Orders/test_cancel_order.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Orders/test_detail_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Orders/test_detail_order.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Orders/test_finish_rating.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Orders/test_finish_rating.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Orders/test_gosend_estimate.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Orders/test_gosend_estimate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Orders/test_index_voucher.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Orders/test_index_voucher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Orders/test_list_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Orders/test_list_order.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Orders/test_show_payment_status.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Orders/test_show_payment_status.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Orders/test_show_voucher.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Orders/test_show_voucher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Profiles/test_list_fav_merchant.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Profiles/test_list_fav_merchant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Profiles/test_list_voucher.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Profiles/test_list_voucher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Profiles/test_show_profiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Profiles/test_show_profiles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Profiles/test_update_password.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Profiles/test_update_password.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/Profiles/test_update_private_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Profiles/test_update_private_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/report/output.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report/report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_logic.py" afterDir="false" />
@@ -176,13 +219,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615261351900</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Fix Bugs">
-      <created>1616311233507</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1616311233507</updated>
     </task>
     <task id="LOCAL-00010" summary="add test scenario test update merchant menu positive &amp; negative">
       <created>1616326569732</created>
@@ -520,7 +556,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618126206501</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="add test scenario customer order finish rating positive &amp; negative">
+      <created>1618144329508</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1618144329508</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -549,7 +592,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add test scenario test customer list merchant positive &amp; negative" />
     <MESSAGE value="add test scenario test customer index menu positive &amp; negative" />
     <MESSAGE value="add Automation scenario test customer index Address positive &amp; negative" />
     <MESSAGE value="add Automation scenario test customer show Address positive &amp; negative" />
@@ -574,6 +616,7 @@
     <MESSAGE value="add test scenario customer order detail order&#10; positive &amp; negative" />
     <MESSAGE value="add test scenario customer order show status&#10; positive &amp; negative" />
     <MESSAGE value="add test scenario customer order cancel order positive &amp; negative" />
-    <option name="LAST_COMMIT_MESSAGE" value="add test scenario customer order cancel order positive &amp; negative" />
+    <MESSAGE value="add test scenario customer order finish rating positive &amp; negative" />
+    <option name="LAST_COMMIT_MESSAGE" value="add test scenario customer order finish rating positive &amp; negative" />
   </component>
 </project>
