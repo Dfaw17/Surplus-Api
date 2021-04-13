@@ -163,7 +163,7 @@ class TestCustomerOrdersShowPaymentStatus:
         assert show_payment.status_code == 200
         assert validate_status == bool(True)
         assert 'Status pembayaran berhasil ditemukan' in validate_message
-        assert 'Midtrans Error ' in validate_data
+        assert 'Payment not found' in validate_data
 
     def test_show_payment_status_id_trx_empty_value(self):
         param = {
@@ -236,7 +236,7 @@ class TestCustomerOrdersShowPaymentStatus:
         assert show_payment.status_code == 200
         assert validate_status == bool(True)
         assert 'Status pembayaran berhasil ditemukan' in validate_message
-        assert 'Midtrans Error' in validate_data
+        assert 'Payment not found' in validate_data
 
     def test_show_payment_status_without_param_payment_methode(self):
         param = {

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="add test scenario customer order checkout positive &amp; negative">
-      <change afterPath="$PROJECT_DIR$/2Customer/Orders/test_order_selfpickup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report/archive/output_1618214129.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report/archive/output_1618272044.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report/archive/output_1618274671.json" afterDir="false" />
+    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="add test scenario customer order selfpickup positive &amp; negative">
+      <change afterPath="$PROJECT_DIR$/2Customer/Orders/test_order_delivery.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1618300305.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2Customer/Auth/test_logout_customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Auth/test_logout_customer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2Customer/Orders/test_show_payment_status.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Orders/test_show_payment_status.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/report/output.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report/report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_logic.py" afterDir="false" />
@@ -178,13 +178,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615261351900</updated>
-    </task>
-    <task id="LOCAL-00011" summary="add test scenario test delete merchant menu positive &amp; negative">
-      <created>1616332212078</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1616332212078</updated>
     </task>
     <task id="LOCAL-00012" summary="add test scenario test set active menu positive &amp; negative">
       <created>1616581097814</created>
@@ -522,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618201197447</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="add test scenario customer order selfpickup positive &amp; negative">
+      <created>1618282677844</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1618282677844</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -551,7 +551,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add Automation scenario test customer index Address positive &amp; negative" />
     <MESSAGE value="add Automation scenario test customer show Address positive &amp; negative" />
     <MESSAGE value="add Automation scenario test customer create Address positive &amp; negative" />
     <MESSAGE value="add Automation scenario test customer delete Address positive &amp; negative" />
@@ -576,6 +575,7 @@
     <MESSAGE value="add test scenario customer order cancel order positive &amp; negative" />
     <MESSAGE value="add test scenario customer order finish rating positive &amp; negative" />
     <MESSAGE value="add test scenario customer order checkout positive &amp; negative" />
-    <option name="LAST_COMMIT_MESSAGE" value="add test scenario customer order checkout positive &amp; negative" />
+    <MESSAGE value="add test scenario customer order selfpickup positive &amp; negative" />
+    <option name="LAST_COMMIT_MESSAGE" value="add test scenario customer order selfpickup positive &amp; negative" />
   </component>
 </project>
