@@ -43,7 +43,7 @@ class TestCustomerListMerchant:
         assert validate_status == bool(True)
         assert 'Data merchant berhasil ditemukan.' in validate_message
         assert_that(validate_data).contains_only('merchant_id', 'nama_merchant', 'merchant_logo',
-                                                 'merchant_branch_status', 'merchant_central_id', 'distance')
+                                                 'merchant_branch_status', 'merchant_central_id', 'distance','merchant_verified')
         assert_that(validate_merchant_id).is_not_none()
         assert_that(validate_nama_merchant).is_not_none()
 

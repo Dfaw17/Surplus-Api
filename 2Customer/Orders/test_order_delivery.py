@@ -38,7 +38,6 @@ class TestCustomerOrdersDelivery:
             "payment_method_id": "1",
             "is_lunchbox": "0",
             "donation_price": "2500",
-            "voucher_id": "62",
             "order_items[0][qty]": "2",
             "order_items[0][stock_id]": discover.json().get('data')['nearby_menu'][0]['stock_id'],
             "address": "Megaregency",
@@ -71,23 +70,6 @@ class TestCustomerOrdersDelivery:
         assert verify_status == bool(True)
         assert "Order Delivery berhasil dibuat" in verify_message
         assert_that(verify_data).is_not_none()
-        assert_that(verify_data).contains_only('id', 'registrasi_order_number', 'alamat', 'status_order_id',
-                                               'canceled_by',
-                                               'created_at', 'keterangan', 'ulasan', 'rating', 'merchant', 'transaksi')
-        assert_that(verify_data_merchant).contains_only('id', 'name', 'email', 'no_ponsel', 'alamat', 'auth_origin',
-                                                        'referal_code', 'onesignal_loc', 'latitude', 'longitude')
-        assert_that(verify_data_transaksi).contains_only('id', 'metode_pembayaran_id', 'order_id', 'invoice_id',
-                                                         'invoice_url',
-                                                         'invoice_expired', 'phone_number', 'subtotal', 'grand_total',
-                                                         'grand_total_harga_asli', 'potongan_surplus',
-                                                         'potongan_voucher',
-                                                         'potongan_kotak_makan', 'hemat', 'komisi_merchant',
-                                                         'komisi_surplus',
-                                                         'kode', 'jenis_kode', 'is_tempat_makanan', 'image_lunchbox',
-                                                         'is_dikirim', 'status_transaksi_id', 'status_pickup_id',
-                                                         'step_progress', 'pickup_by_system', 'created_at',
-                                                         'updated_at',
-                                                         'voucher_id', 'shipment_price')
 
     def test_OD_wrong_Token(self):
         param = {

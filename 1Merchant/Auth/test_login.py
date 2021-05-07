@@ -1,12 +1,12 @@
 import requests
-import env
+from env import stagging
 
 class TestLogin:
 
     global url_login, email, kata_sandi, email_not_registered, kata_sandi_not_registered\
             , wrong_email, wrong_pass, email_withot_at, kata_sandi_kurang_char, setting_env
 
-    setting_env = env.stagging
+    setting_env = stagging
     url_login = f"{setting_env}/api/v2/merchant/auth/login"
     email ="vd1@gmail.com"
     kata_sandi ="12345678"
@@ -46,7 +46,7 @@ class TestLogin:
         validate_message = data.get("message")
         validate_status = data.get("success")
 
-        assert validate_message == "Email atau password salah."
+        assert "tidak ada atau belum disetujui." in validate_message
         assert validate_status == bool(False)
         assert response.status_code == 404
 
@@ -62,7 +62,7 @@ class TestLogin:
         validate_message = data.get("message")
         validate_status = data.get("success")
 
-        assert validate_message == "Email atau password salah."
+        assert "tidak ada atau belum disetujui." in validate_message
         assert validate_status == bool(False)
         assert response.status_code == 404
 

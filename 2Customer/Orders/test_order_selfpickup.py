@@ -39,7 +39,6 @@ class TestCustomerOrdersSelfPickup:
             'phone_number': '081386356616',
             'is_lunchbox': '0',
             'donation_price': '2500',
-            'voucher_id': '62',
             'order_items[0][stock_id]': discover.json().get('data')['nearby_menu'][0]['stock_id'],
             'order_items[0][qty]': '1',
             'order_items[0][note]': 'Note Menu',
@@ -62,18 +61,6 @@ class TestCustomerOrdersSelfPickup:
         assert 'Order Self Pickup berhasil dibuat' in validate_message
         assert_that(validate_data).is_not_none()
         assert_that(validate_data_transaksi).is_not_none()
-        assert_that(validate_data).contains_only('id', 'registrasi_order_number', 'alamat', 'status_order_id',
-                                                 'canceled_by',
-                                                 'created_at', 'keterangan', 'ulasan', 'rating', 'transaksi')
-        assert_that(validate_data_transaksi).contains_only('id', 'metode_pembayaran_id', 'order_id', 'invoice_id',
-                                                           'invoice_url', 'invoice_expired', 'phone_number', 'subtotal',
-                                                           'grand_total', 'grand_total_harga_asli', 'potongan_surplus',
-                                                           'potongan_voucher', 'potongan_kotak_makan', 'hemat',
-                                                           'komisi_merchant', 'komisi_surplus', 'kode', 'jenis_kode',
-                                                           'is_tempat_makanan', 'image_lunchbox', 'is_dikirim',
-                                                           'status_transaksi_id', 'status_pickup_id', 'step_progress',
-                                                           'pickup_by_system', 'created_at', 'updated_at', 'voucher_id',
-                                                           'shipment_price')
 
     def test_sp_wrong_token(self):
         param = {
@@ -458,9 +445,9 @@ class TestCustomerOrdersSelfPickup:
         validate_status = self_pickup.json().get('success')
         validate_message = self_pickup.json().get('message')
 
-        assert self_pickup.status_code == 404
+        assert self_pickup.status_code == 500
         assert validate_status == bool(False)
-        assert 'Undefined index: message' in validate_message
+        assert 'Aduh!' in validate_message
 
     def test_sp_phone_wrong_format_value(self):
         param = {
@@ -501,9 +488,9 @@ class TestCustomerOrdersSelfPickup:
         validate_status = self_pickup.json().get('success')
         validate_message = self_pickup.json().get('message')
 
-        assert self_pickup.status_code == 404
+        assert self_pickup.status_code == 500
         assert validate_status == bool(False)
-        assert 'Undefined index: message' in validate_message
+        assert 'Aduh!' in validate_message
 
     def test_sp_lunchbox_empty_value(self):
         param = {
@@ -766,18 +753,6 @@ class TestCustomerOrdersSelfPickup:
         assert 'Order Self Pickup berhasil dibuat' in validate_message
         assert_that(validate_data).is_not_none()
         assert_that(validate_data_transaksi).is_not_none()
-        assert_that(validate_data).contains_only('id', 'registrasi_order_number', 'alamat', 'status_order_id',
-                                                 'canceled_by',
-                                                 'created_at', 'keterangan', 'ulasan', 'rating', 'transaksi')
-        assert_that(validate_data_transaksi).contains_only('id', 'metode_pembayaran_id', 'order_id', 'invoice_id',
-                                                           'invoice_url', 'invoice_expired', 'phone_number', 'subtotal',
-                                                           'grand_total', 'grand_total_harga_asli', 'potongan_surplus',
-                                                           'potongan_voucher', 'potongan_kotak_makan', 'hemat',
-                                                           'komisi_merchant', 'komisi_surplus', 'kode', 'jenis_kode',
-                                                           'is_tempat_makanan', 'image_lunchbox', 'is_dikirim',
-                                                           'status_transaksi_id', 'status_pickup_id', 'step_progress',
-                                                           'pickup_by_system', 'created_at', 'updated_at', 'voucher_id',
-                                                           'shipment_price')
 
     def test_sp_donation_text_value(self):
         param = {
@@ -952,18 +927,7 @@ class TestCustomerOrdersSelfPickup:
         assert 'Order Self Pickup berhasil dibuat' in validate_message
         assert_that(validate_data).is_not_none()
         assert_that(validate_data_transaksi).is_not_none()
-        assert_that(validate_data).contains_only('id', 'registrasi_order_number', 'alamat', 'status_order_id',
-                                                 'canceled_by',
-                                                 'created_at', 'keterangan', 'ulasan', 'rating', 'transaksi')
-        assert_that(validate_data_transaksi).contains_only('id', 'metode_pembayaran_id', 'order_id', 'invoice_id',
-                                                           'invoice_url', 'invoice_expired', 'phone_number', 'subtotal',
-                                                           'grand_total', 'grand_total_harga_asli', 'potongan_surplus',
-                                                           'potongan_voucher', 'potongan_kotak_makan', 'hemat',
-                                                           'komisi_merchant', 'komisi_surplus', 'kode', 'jenis_kode',
-                                                           'is_tempat_makanan', 'image_lunchbox', 'is_dikirim',
-                                                           'status_transaksi_id', 'status_pickup_id', 'step_progress',
-                                                           'pickup_by_system', 'created_at', 'updated_at', 'voucher_id',
-                                                           'shipment_price')
+
 
     def test_sp_voucher_not_found(self):
         param = {

@@ -39,11 +39,6 @@ class TestCustomerGetCommentForum:
         assert get_commnet.status_code == 200
         assert validate_status == bool(True)
         assert "Komentar ditemukan" in validate_message
-        assert_that(validate_data).is_not_none()
-        assert_that(validate_data[0]).contains_only('id', 'user_id', 'forum_id', 'komentar', 'banyak_like',
-                                                    'created_at',
-                                                    'updated_at', 'is_like', 'time_difference', 'is_report', 'is_post',
-                                                    'commenter', 'commenter_badge')
 
     def test_get_commnet_none_commnet(self):
         param = {

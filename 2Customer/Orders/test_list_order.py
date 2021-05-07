@@ -5,8 +5,7 @@ from assertpy import assert_that
 
 
 class TestCustomerOrdersListOrder:
-
-    global setting_env,url_login,url_list_order,email,kata_sandi,wrong_token
+    global setting_env, url_login, url_list_order, email, kata_sandi, wrong_token
 
     setting_env = stagging
     url_login = f"{setting_env}/api/v2/customer/auth/login/email"
@@ -40,9 +39,12 @@ class TestCustomerOrdersListOrder:
         assert list_order.status_code == 200
         assert validate_status == bool(True)
         assert 'Data order berhasil ditemukan.' in validate_message
-        assert_that(validate_data).contains_only('id', 'registrasi_order_number', 'alamat', 'status_order_id',
+        assert_that(validate_data).contains_only('id', 'user_id', 'merchant_id', 'registrasi_order_number',
+                                                 "registrasi_order_number_secondary", 'alamat',
+                                                 'status_order_id',
                                                  'canceled_by',
-                                                 'created_at', 'keterangan', 'ulasan', 'rating', 'merchant_name',
+                                                 'created_at', "updated_at", 'keterangan', "shipment_id",
+                                                 "shipment_detail_id", 'merchant_name',
                                                  'merchant_logo', 'order_qty', 'order_date', 'grand_total',
                                                  'metode_pembayaran_id', 'invoice_url', 'is_tomorrow', 'shipment')
 
@@ -170,4 +172,3 @@ class TestCustomerOrdersListOrder:
         assert list_order.status_code == 422
         assert validate_status == bool(False)
         assert 'Status pesanan tidak boleh kosong.' in validate_message
-

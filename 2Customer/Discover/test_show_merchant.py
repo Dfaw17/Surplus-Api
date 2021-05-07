@@ -62,10 +62,10 @@ class TestCustomerShowMerchant:
         assert 'Data merchant berhasil ditemukan.' in validate_message
         assert validate_id_merchant == discover.json().get('data')['nearby_merchant'][0]['merchant_id']
         assert_that(validate_data_merchant).contains_only('id', 'name', 'email', 'no_ponsel', 'alamat', 'rating',
-                                                          'total_like',
+                                                          'total_like',"total_review",
                                                           'logo_url', 'merchant_latitude', 'merchant_longitude',
-                                                          'distance',
-                                                          'isLike')
+                                                          'distance',"merchant_branch_status","merchant_central_id",
+                                                          'isLike',"merchant_verified","merchant_category")
         assert_that(validate_data_menus).contains_only('ready_stock', 'preorder')
         assert_that([validate_data_merchant_name, validate_data_merchant_email, validate_data_merchant_phone,
                      validate_data_merchant_alamat, validate_data_merchant_merchant_latitude,

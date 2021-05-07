@@ -1,13 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="add test scenario customer order selfpickup positive &amp; negative (adjuetment)">
-      <change afterPath="$PROJECT_DIR$/1Merchant/Profiles/test_verify_toko.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report/archive/output_1618377022.json" afterDir="false" />
+    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="add test scenario merchant profile verify toko positive &amp; negative">
+      <change afterPath="$PROJECT_DIR$/1Merchant/Order/test_settlement.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1618388216.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1618390778.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1618477092.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1618795176.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1619405020.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1619405553.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1620098245.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1620098778.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1620099491.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1620103478.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1620359041.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/archive/output_1620359550.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive/output_1618368808.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytest_html_report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1Merchant/Auth/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Auth/test_login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1Merchant/Profiles/test_verify_toko.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2Customer/Discover/test_discover_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Discover/test_discover_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2Customer/Discover/test_index_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Discover/test_index_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2Customer/Discover/test_list_merchant.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Discover/test_list_merchant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2Customer/Discover/test_show_merchant.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Discover/test_show_merchant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2Customer/Forum/test_get_comment.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Forum/test_get_comment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2Customer/Orders/test_detail_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Orders/test_detail_order.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2Customer/Orders/test_finish_rating.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2Customer/Orders/test_list_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Orders/test_list_order.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2Customer/Orders/test_order_delivery.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Orders/test_order_delivery.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2Customer/Orders/test_order_selfpickup.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Orders/test_order_selfpickup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/env.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/report/output.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report/report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_logic.py" afterDir="false" />
@@ -179,13 +200,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615261351900</updated>
-    </task>
-    <task id="LOCAL-00014" summary="re-push">
-      <created>1616581512000</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1616581512000</updated>
     </task>
     <task id="LOCAL-00015" summary="add test scenario test merchant order index positive &amp; negative">
       <created>1616628760804</created>
@@ -523,7 +537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618368869102</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="add test scenario merchant profile verify toko positive &amp; negative">
+      <created>1618389689215</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1618389689215</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -552,7 +573,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add Automation scenario test customer delete Address positive &amp; negative" />
     <MESSAGE value="add Automation scenario test customer show profiles positive &amp; negative" />
     <MESSAGE value="add Automation scenario test customer list vouchers profiles positive &amp; negative" />
     <MESSAGE value="add Automation scenario test customer list merchant fav profiles positive &amp; negative" />
@@ -577,6 +597,7 @@
     <MESSAGE value="add test scenario customer order selfpickup positive &amp; negative" />
     <MESSAGE value="add test scenario customer order delivery positive &amp; negative" />
     <MESSAGE value="add test scenario customer order selfpickup positive &amp; negative (adjuetment)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add test scenario customer order selfpickup positive &amp; negative (adjuetment)" />
+    <MESSAGE value="add test scenario merchant profile verify toko positive &amp; negative" />
+    <option name="LAST_COMMIT_MESSAGE" value="add test scenario merchant profile verify toko positive &amp; negative" />
   </component>
 </project>

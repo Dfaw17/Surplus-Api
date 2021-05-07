@@ -46,7 +46,7 @@ class TestCustomerIndexMenu:
                                                  'stock', 'is_active', 'is_missed', 'is_tomorrow', 'waktu_missed',
                                                  'total_terjual', 'expiry_date_string', 'nama_merchant',
                                                  'alamat_merchant', 'merchant_logo', 'merchant_branch_status',
-                                                 'merchant_central_id', 'distance', 'branches')
+                                                 'merchant_central_id', 'distance', 'branches','merchant_verified')
 
     def test_index_menu_wrong_token(self):
         param = {

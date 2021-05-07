@@ -45,7 +45,7 @@ class TestCustomerDiscoverMenu:
         assert_that(validate_data).contains_only('nearby_menu', 'available_voucher', 'menu_categories', 'missed_menu',
                                                  'newest_menu', 'bestseller_menu', 'nearby_merchant', 'menu_makanan',
                                                  'menu_roti', 'menu_vegan', 'menu_bahan_makanan', 'menu_kue',
-                                                 'menu_buah', 'menu_non_halal', 'menu_lainnya')
+                                                 'menu_buah', 'menu_non_halal', 'menu_lainnya','order_without_review')
 
     def test_discovers_latitude_empty_value(self):
         param = {
