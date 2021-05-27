@@ -49,14 +49,6 @@ class TestCustomerShowMenu:
         assert show_menu.status_code == 200
         assert_that([validate_data_menu, validate_nama_menu_makanan, validate_merchant_kategori_makanan_id,
                      validate_merchant_id]).is_not_empty()
-        assert_that(validate_data).contains_only('stock_id', 'merchant_id', 'menu_id', 'nama_menu_makanan',
-                                                 'merchant_kategori_makanan_id', 'deskripsi', 'harga_asli',
-                                                 'harga_jual', 'is_non_halal', 'image_thumbnail', 'created_at',
-                                                 'updated_at', 'waktu_mulai_penjemputan', 'waktu_akhir_penjemputan',
-                                                 'stock', 'is_active', 'is_missed', 'is_tomorrow', 'waktu_missed',
-                                                 'total_terjual', 'expiry_date_string', 'merchant_name',
-                                                 'merchant_address', 'merchant_latitude', 'merchant_longitude',
-                                                 'merchant_logo', 'menu_image', 'merchant_distance')
 
     def test_show_menu_without_token(self):
         param = {
