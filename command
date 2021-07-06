@@ -1,0 +1,1 @@
+python -m pytest -v 2Customer\Forum\test_profile_forum.py

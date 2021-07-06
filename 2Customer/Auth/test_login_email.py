@@ -3,9 +3,9 @@ from env import stagging
 from pprint import pprint
 from assertpy import assert_that
 
-class TestCustomerLoginEmail:
 
-    global setting_env,login_email,email,kata_sandi
+class TestCustomerLoginEmail:
+    global setting_env, login_email, email, kata_sandi
 
     setting_env = stagging
     login_email = f"{setting_env}/api/v2/customer/auth/login/email"

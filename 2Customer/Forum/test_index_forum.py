@@ -1,11 +1,10 @@
 import requests
 from env import stagging
-from pprint import pprint
 from assertpy import assert_that
 
-class TestCustomerIndexForum:
 
-    global setting_env,url_login,url_forum,email,kata_sandi,wrong_token
+class TestCustomerIndexForum:
+    global setting_env, url_login, url_forum, email, kata_sandi, wrong_token
 
     setting_env = stagging
     url_login = f"{setting_env}/api/v2/customer/auth/login/email"
@@ -302,7 +301,7 @@ class TestCustomerIndexForum:
         assert update_passwrod.status_code == 422
         assert validate_status == bool(False)
         assert 'per page tidak boleh kosong.' in validate_message
-        
+
     def test_index_forum_perPage_minus_value(self):
         param = {
             'email': email,
@@ -437,5 +436,3 @@ class TestCustomerIndexForum:
         assert update_passwrod.status_code == 200
         assert validate_status == bool(True)
         assert 'Data forum berhasil ditemukan.' in validate_message
-
-

@@ -1,30 +1,34 @@
 import requests
-import time
-from env import stagging
+from assertpy import assert_that
 
-setting_env = stagging
-order_settelemet = f"{setting_env}/api/v2/merchant/orders/"
-order_index = f"{setting_env}/api/v2/merchant/orders"
-url_login = f"{setting_env}/api/v2/merchant/auth/login"
-email = "vd1@gmail.com"
-kata_sandi = "12345678"
+url = "https://5bb4e7db-1cd4-4003-ac9a-526e1696768c.mock.pstmn.io/api/v2/customer/profile-forums"
+test = requests.get(url, headers={'Accept': 'application/json'})
 
-param = {
+validate_status = test.json().get('success')
+validate_message = test.json().get('message')
+validate_owner = test.json().get('data')['post_owner_name']
+validate_badge_owner = test.json().get('data')['badge_owner']
+validate_total_post = test.json().get('data')['total_post']
+validate_total_like = test.json().get('data')['total_like']
+validate_total_saved = test.json().get('data')['total_saved']
+validate_forums = test.json().get('data')['forums']
+calculate_like = sum([a['banyak_like'] for a in validate_forums])
+calculate_saved = sum([a['banyak_disimpan'] for a in validate_forums])
 
-    "email": email,
-    "password": kata_sandi
-}
-login = requests.post(url_login, data=param, headers={'Accept': 'application/json'})
-token = login.json().get("token")
-headers = {
-    "Authorization": f"Bearer {token}",
-    "Accept": "application/json"
-}
-param2 = {
+assert test.status_code == 200
+assert validate_status == bool(True)
+assert 'Data profile forum ditemukan.' in validate_message
+assert_that(validate_owner).is_not_empty() and assert_that(validate_owner).is_not_none()
+assert_that(validate_badge_owner).is_not_none()
+assert_that(validate_total_post).is_not_none()
+assert_that(validate_total_like).is_not_none()
+assert_that(validate_total_saved).is_not_none()
+assert_that(validate_forums).is_type_of(list)
+assert_that(validate_total_post).is_equal_to(len(validate_forums))
+assert_that(validate_total_like).is_equal_to(calculate_like)
+assert_that(validate_total_saved).is_equal_to(calculate_saved)
+assert_that(test.json().get('data')).contains_only('post_owner_name', 'badge_owner', 'total_post', 'total_like',
+                                                   'total_saved', 'forums')
 
-    "type": "ready_stock"
-}
-
-index = requests.get(order_index, params=param2, headers=headers)
-response = requests.post(order_settelemet+str(index.json().get('data')[0]['registrasi_order_number'])+"/settlement?_method=PATCH", headers=headers)
-print(response.json())
+print("Success Test")
+# print(test.json())
