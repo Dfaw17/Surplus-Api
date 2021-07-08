@@ -18,4 +18,4 @@ assert 'Data forum berhasil ditemukan.' in validate_message
 
 
 # print(index_forum.json())
-print("Success Test")
+print("Success Test2")
