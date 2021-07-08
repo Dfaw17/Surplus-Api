@@ -22,11 +22,11 @@ class TestCustomerIndexForum:
             "Accept": "application/json"
         }
         login = requests.post(url_login, params=param, headers=headers)
-        headers = {
+        headers2 = {
             "Accept": "application/json",
             "Authorization": f"Bearer {login.json().get('token')}"
         }
-        index_forum = requests.get(url_forum)
+        index_forum = requests.get(url_forum, headers=headers2)
 
         validate_status = index_forum.json().get('success')
         validate_message = index_forum.json().get('message')

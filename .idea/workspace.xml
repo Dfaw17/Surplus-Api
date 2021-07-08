@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="adjustment" />
+    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="adjustment">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_07_2021_14_00__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_07_2021_14_00__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2Customer/Forum/test_index_forum.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Forum/test_index_forum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/output.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytest_html_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/pytest_html_report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_logic.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
