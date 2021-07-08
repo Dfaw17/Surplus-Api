@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="test 06/07/2021">
-      <change afterPath="$PROJECT_DIR$/archive/output_1625726732.126993.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/archive/output_1625726776.9413786.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/archive/output_1625726788.000467.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pytest_html_report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2Customer/Forum/test_profile_forum.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Forum/test_profile_forum.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2Customer/Orders/test_gosend_estimate.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Orders/test_gosend_estimate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/command" beforeDir="false" afterPath="$PROJECT_DIR$/command" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_logic.py" afterDir="false" />
-    </list>
+    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="adjustment" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
