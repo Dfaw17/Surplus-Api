@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="clear cache">
-      <change afterPath="$PROJECT_DIR$/archive/output_1625727428.5413823.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/archive/output_1625727455.6832447.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/archive/output_1625727468.231784.json" afterDir="false" />
+    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="test 06/07/2021">
+      <change afterPath="$PROJECT_DIR$/archive/output_1625726732.126993.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625726776.9413786.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625726788.000467.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/output.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pytest_html_report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/2Customer/Forum/test_profile_forum.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Forum/test_profile_forum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2Customer/Orders/test_gosend_estimate.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Orders/test_gosend_estimate.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/command" beforeDir="false" afterPath="$PROJECT_DIR$/command" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_logic.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,6 +180,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615261351900</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add test scenario test customer register email positive &amp; negative">
+      <created>1616669204323</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1616669204323</updated>
+    </task>
+    <task id="LOCAL-00019" summary="add file bat to auto run test without open the project">
+      <created>1616724215303</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1616724215303</updated>
     </task>
     <task id="LOCAL-00020" summary="add test scenario test customer test register oauth positive &amp; negative">
       <created>1616731519044</created>
@@ -508,21 +524,7 @@
       <option name="project" value="LOCAL" />
       <updated>1625579205849</updated>
     </task>
-    <task id="LOCAL-00067" summary="Unit Test gosend estimate, dan profile forum">
-      <created>1625726842564</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1625726842564</updated>
-    </task>
-    <task id="LOCAL-00068" summary="clear cache">
-      <created>1625726921040</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1625726921040</updated>
-    </task>
-    <option name="localTasksCounter" value="69" />
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -551,6 +553,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="add Automation scenario test customer update private data profiles positive &amp; negative" />
+    <MESSAGE value="add Automation scenario test customer update password profiles positive &amp; negative" />
     <MESSAGE value="add Automation scenario test customer index forum positive &amp; negative" />
     <MESSAGE value="adjustment branch feature merchant and customer" />
     <MESSAGE value="add test scenario customer forum show positive &amp; negative" />
@@ -574,8 +578,6 @@
     <MESSAGE value="adjustment uat 07/05/2021" />
     <MESSAGE value="adjustment uat 27/05/2021" />
     <MESSAGE value="test 06/07/2021" />
-    <MESSAGE value="Unit Test gosend estimate, dan profile forum" />
-    <MESSAGE value="clear cache" />
-    <option name="LAST_COMMIT_MESSAGE" value="clear cache" />
+    <option name="LAST_COMMIT_MESSAGE" value="test 06/07/2021" />
   </component>
 </project>
