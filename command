@@ -5,3 +5,5 @@
 3. unit test index forum = python -m pytest -v .\2Customer\Forum\test_index_forum.py::TestCustomerIndexForum::test_index_forum_normal
 
 4. unit test show forum = python -m pytest -v 2Customer\Forum\test_show_forum.py::TestCustomerShowForum::test_show_forum_normal
+
+5. unit test get comment = python -m pytest -v 2Customer\Forum\test_get_comment.py::TestCustomerGetCommentForum::test_get_comment_normal

@@ -1,5 +1,5 @@
 import requests
-from env import stagging
+from env import *
 from pprint import pprint
 from assertpy import assert_that
 
@@ -7,7 +7,7 @@ from assertpy import assert_that
 class TestCustomerGetCommentForum:
     global setting_env, url_login, get_comment, email, kata_sandi, wrong_token
 
-    setting_env = stagging
+    setting_env = mock
     url_login = f"{setting_env}/api/v2/customer/auth/login/email"
     get_comment = f"{setting_env}/api/v2/customer/comments/"
     email = "kopiruangvirtual@gmail.com"
@@ -23,22 +23,25 @@ class TestCustomerGetCommentForum:
             "Accept": "application/json"
         }
         login = requests.post(url_login, params=param, headers=headers)
-        headers2 = {
+        headers = {
             "Accept": "application/json",
-            "Authorization": f"Bearer {login.json().get('token')}"
+            # "Authorization": f"Bearer {login.json().get('token')}"
         }
-        param2 = {
-            'forum_id': '350'
+        param = {
+            "forum_id": "107"
         }
-        get_commnet = requests.get(get_comment, params=param2, headers=headers2)
+        show_forum = requests.get(get_comment, headers=headers, params=param)
 
-        validate_status = get_commnet.json().get('success')
-        validate_message = get_commnet.json().get('message')
-        validate_data = get_commnet.json().get('data')
+        validate_status = show_forum.json().get('success')
+        validate_message = show_forum.json().get('message')
+        validate_data = show_forum.json().get('data')[0]
 
-        assert get_commnet.status_code == 200
+        assert show_forum.status_code == 200
         assert validate_status == bool(True)
-        assert "Komentar ditemukan" in validate_message
+        assert 'Komentar ditemukan' in validate_message
+        assert_that(validate_data).contains_only('id', 'user_id', 'forum_id', 'komentar', 'banyak_like', 'created_at',
+                                                 'updated_at', 'is_like', 'time_difference', 'is_report', 'is_post',
+                                                 'commenter', 'email', 'commenter_badge')
 
     def test_get_commnet_none_commnet(self):
         param = {
