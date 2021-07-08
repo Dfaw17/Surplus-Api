@@ -14,21 +14,20 @@ class TestCustomerGetCommentForum:
     wrong_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc3RhZ2luZy5hZG1pbnN1cnBsdXMubmV0XC9hcGlcL3YyXC9jdXN0b21lclwvYXV0aFwvbG9naW5cL2VtYWlsIiwiaWF0IjoxNjE2ODA1NzI2LCJleHAiOjE2MTkzOTc3MjYsIm5iZiI6MTYxNjgwNTcyNiwianRpIjoib05ESmxFRE5hSzNrN2RtVyIsInN1YiI6NDEyNiwicHJ2IjoiMjc0MTA1ZGE2ZTk1YmVmMjgwNzc4NmRkODczODg2N2NmOWMwMmFhYiJ9.fj51xIfQrqleRvdSJUbWcdrvsxQPUn8HpccnOmTgPDI'
 
     def test_get_profile_forum_normal(self):
-        # param = {
-        #     'email': email,
-        #     'password': kata_sandi
-        # }
-        # headers = {
-        #     "Accept": "application/json"
-        # }
-        # login = requests.post(url_login, params=param, headers=headers)
-        # headers2 = {
-        #     "Accept": "application/json",
-        #     "Authorization": f"Bearer {login.json().get('token')}"
-        # }
+        param = {
+            'email': email,
+            'password': kata_sandi
+        }
+        headers = {
+            "Accept": "application/json"
+        }
+        login = requests.post(url_login, params=param, headers=headers)
+        headers2 = {
+            "Accept": "application/json",
+            "Authorization": f"Bearer {login.json().get('token')}"
+        }
 
-        # profile_forum = requests.get(url_profile_forum, headers=headers2)
-        profile_forum = requests.get(url_profile_forum, headers={'Accept': 'application/json'})
+        profile_forum = requests.get(url_profile_forum, headers=headers2)
 
         validate_status = profile_forum.json().get('success')
         validate_message = profile_forum.json().get('message')
