@@ -1,12 +1,12 @@
 import requests
-from env import stagging
+from env import *
 from assertpy import assert_that
 
 
 class TestCustomerIndexForum:
     global setting_env, url_login, url_forum, email, kata_sandi, wrong_token
 
-    setting_env = stagging
+    setting_env = mock
     url_login = f"{setting_env}/api/v2/customer/auth/login/email"
     url_forum = f"{setting_env}/api/v2/customer/forums"
     email = "kopiruangvirtual@gmail.com"
@@ -22,42 +22,36 @@ class TestCustomerIndexForum:
             "Accept": "application/json"
         }
         login = requests.post(url_login, params=param, headers=headers)
-        headers2 = {
+        headers = {
             "Accept": "application/json",
             "Authorization": f"Bearer {login.json().get('token')}"
         }
-        param2 = {
-            'forum_category_id': '1',
-            'perPage': '5',
-            'page': '1'
-        }
-        update_passwrod = requests.get(url_forum, params=param2, headers=headers2)
+        index_forum = requests.get(url_forum)
 
-        validate_status = update_passwrod.json().get('success')
-        validate_message = update_passwrod.json().get('message')
-        validate_data = update_passwrod.json().get('data')
-        validate_data_forums = update_passwrod.json().get('data')['forums']
-        validate_data_categories = update_passwrod.json().get('data')['categories'][0]
-        validate_data_report_categories = update_passwrod.json().get('data')['report_categories'][0]
-        validate_data_forums_data = update_passwrod.json().get('data')['forums']['data'][0]
+        validate_status = index_forum.json().get('success')
+        validate_message = index_forum.json().get('message')
+        validate_data = index_forum.json().get('data')
+        validate_data_donation_event = index_forum.json().get('data')['donation_event']
+        validate_data_popular_posts = index_forum.json().get('data')['popular_posts']
+        validate_data_saved_posts = index_forum.json().get('data')['saved_posts']
+        validate_data_newest_posts = index_forum.json().get('data')['newest_posts']
 
-        assert update_passwrod.status_code == 200
+        assert index_forum.status_code == 200
         assert validate_status == bool(True)
         assert 'Data forum berhasil ditemukan.' in validate_message
-        assert_that(validate_data).contains_only('forums', 'categories', 'report_categories')
-        assert_that(validate_data_forums).contains_only('current_page', 'data', 'first_page_url', 'from', 'last_page',
-                                                        'last_page_url', 'next_page_url', 'path', 'per_page',
-                                                        'prev_page_url',
-                                                        'to', 'total')
-        assert_that(validate_data_categories).contains_only('id', 'kategori', 'created_at', 'updated_at')
-        assert_that(validate_data_report_categories).contains_only('id', 'nama', 'created_at', 'updated_at')
-        assert_that(validate_data_forums_data).contains_only('id', 'user_id', 'forum_kategori_id', 'judul', 'konten',
-                                                             'link',
-                                                             'image', 'banyak_komentar', 'banyak_like', 'location',
-                                                             'post_owner_name', 'category_name', 'badge_owner',
-                                                             'is_post',
-                                                             'is_like', 'is_report', 'is_bookmark', 'time_difference',
-                                                             'images')
+        assert_that(validate_data).contains_only('donation_event','popular_posts','liked_posts','saved_posts','newest_posts')
+        assert_that(validate_data_donation_event).is_type_of(list)
+        assert_that(validate_data_popular_posts).is_type_of(list)
+        assert_that(validate_data_saved_posts).is_type_of(list)
+        assert_that(validate_data_newest_posts).is_type_of(list)
+        assert_that(len(validate_data_donation_event)).is_equal_to(5)
+        assert_that(len(validate_data_popular_posts)).is_equal_to(5)
+        assert_that(len(validate_data_saved_posts)).is_equal_to(5)
+        assert_that(len(validate_data_newest_posts)).is_equal_to(5)
+        assert_that(validate_data_donation_event[0]).contains_only('id','user_id','category_id','judul','konten','link','image','banyak_komentar','banyak_like','location','post_owner_name','category_name','badge_owner','is_post','is_like','is_report','is_bookmark','time_difference','images')
+        assert_that(validate_data_popular_posts[0]).contains_only('id','user_id','category_id','judul','konten','link','image','banyak_komentar','banyak_like','location','post_owner_name','category_name','badge_owner','is_post','is_like','is_report','is_bookmark','time_difference','images')
+        assert_that(validate_data_saved_posts[0]).contains_only('id','user_id','category_id','judul','konten','link','image','banyak_komentar','banyak_like','location','post_owner_name','category_name','badge_owner','is_post','is_like','is_report','is_bookmark','time_difference','images')
+        assert_that(validate_data_newest_posts[0]).contains_only('id','user_id','category_id','judul','konten','link','image','banyak_komentar','banyak_like','location','post_owner_name','category_name','badge_owner','is_post','is_like','is_report','is_bookmark','time_difference','images')
 
     def test_index_forum_token_empty(self):
         param = {
