@@ -1,34 +1,41 @@
 import requests
 from assertpy import assert_that
 
-url = "https://5bb4e7db-1cd4-4003-ac9a-526e1696768c.mock.pstmn.io/api/v2/customer/profile-forums"
-test = requests.get(url, headers={'Accept': 'application/json'})
+param2 = {
+            "origin": "-6.181663,106.805884",
+            "destination": "-6.188844,106.847186",
+            "id_stocks[0]": "54",
+        }
 
-validate_status = test.json().get('success')
-validate_message = test.json().get('message')
-validate_owner = test.json().get('data')['post_owner_name']
-validate_badge_owner = test.json().get('data')['badge_owner']
-validate_total_post = test.json().get('data')['total_post']
-validate_total_like = test.json().get('data')['total_like']
-validate_total_saved = test.json().get('data')['total_saved']
-validate_forums = test.json().get('data')['forums']
-calculate_like = sum([a['banyak_like'] for a in validate_forums])
-calculate_saved = sum([a['banyak_disimpan'] for a in validate_forums])
+headers2 = {
+            "Accept": "application/json"
+        }
+url2 = "https://5bb4e7db-1cd4-4003-ac9a-526e1696768c.mock.pstmn.io/api/v2/customer/gosend/estimate"
+gosend_estimate = requests.get(url2, params=param2, headers=headers2)
 
-assert test.status_code == 200
+param3 = {
+            "origin": "-6.181663,106.805884",
+            "destination": "-6.188844,106.847186",
+            "paymentType": "3",
+        }
+
+headers3 = {
+            "Client-ID": "surplus-indonesia-engine",
+            "Pass-Key": "de513a339c192d46a079f6f822b9e144fd50cb683df2dd374604e1add228ab58"
+        }
+url3 = "https://integration-kilat-api.gojekapi.com/gokilat/v10/calculate/price"
+gosend_estimate_real = requests.get(url3, params=param3, headers=headers3)
+
+validate_status = gosend_estimate.json().get('success')
+validate_message = gosend_estimate.json().get('message')
+validate_price = gosend_estimate.json().get('data')['instant']['price']
+validate_price_real = gosend_estimate_real.json().get('Instant')['price']['total_price']
+
+assert gosend_estimate.status_code == 200
 assert validate_status == bool(True)
-assert 'Data profile forum ditemukan.' in validate_message
-assert_that(validate_owner).is_not_empty() and assert_that(validate_owner).is_not_none()
-assert_that(validate_badge_owner).is_not_none()
-assert_that(validate_total_post).is_not_none()
-assert_that(validate_total_like).is_not_none()
-assert_that(validate_total_saved).is_not_none()
-assert_that(validate_forums).is_type_of(list)
-assert_that(validate_total_post).is_equal_to(len(validate_forums))
-assert_that(validate_total_like).is_equal_to(calculate_like)
-assert_that(validate_total_saved).is_equal_to(calculate_saved)
-assert_that(test.json().get('data')).contains_only('post_owner_name', 'badge_owner', 'total_post', 'total_like',
-                                                   'total_saved', 'forums')
+assert 'Gosend tersedia' in validate_message
+assert_that(validate_price).is_equal_to(validate_price_real+float(1000))
 
+print(validate_price)
+print(validate_price_real+float(1000))
 print("Success Test")
-# print(test.json())

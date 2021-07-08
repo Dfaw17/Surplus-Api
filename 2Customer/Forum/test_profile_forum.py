@@ -1,5 +1,5 @@
 import requests
-from env import mock
+from env import *
 from assertpy import assert_that
 
 
@@ -37,7 +37,9 @@ class TestCustomerGetCommentForum:
         validate_total_post = profile_forum.json().get('data')['total_post']
         validate_total_like = profile_forum.json().get('data')['total_like']
         validate_total_saved = profile_forum.json().get('data')['total_saved']
-        validate_forums = profile_forum.json().get('data')['forums']
+        validate_forums = profile_forum.json().get('data')['newest_forums']
+        validate_forums_saved = profile_forum.json().get('data')['saved_forums']
+        validate_forums_liked = profile_forum.json().get('data')['liked_forums']
         calculate_like = sum([a['banyak_like'] for a in validate_forums])
         calculate_saved = sum([a['banyak_disimpan'] for a in validate_forums])
 
@@ -50,8 +52,15 @@ class TestCustomerGetCommentForum:
         assert_that(validate_total_like).is_not_none()
         assert_that(validate_total_saved).is_not_none()
         assert_that(validate_forums).is_type_of(list)
-        assert_that(validate_total_post).is_equal_to(len(validate_forums))
-        assert_that(validate_total_like).is_equal_to(calculate_like)
-        assert_that(validate_total_saved).is_equal_to(calculate_saved)
+        assert_that(validate_forums_saved).is_type_of(list)
+        assert_that(validate_forums_liked).is_type_of(list)
+        assert_that(validate_forums).is_type_of(list)
+        assert_that(validate_total_post).is_type_of(int)
+        assert_that(validate_total_like).is_type_of(int)
+        assert_that(validate_total_saved).is_type_of(int)
+        assert_that(len(validate_forums)).is_equal_to(5)
+        assert_that(len(validate_forums_saved)).is_equal_to(5)
+        assert_that(len(validate_forums_liked)).is_equal_to(5)
         assert_that(profile_forum.json().get('data')).contains_only('post_owner_name', 'badge_owner', 'total_post', 'total_like',
-                                                           'total_saved', 'forums')
+                                                           'total_saved', 'newest_forums', 'saved_forums',
+                                                           'liked_forums')
