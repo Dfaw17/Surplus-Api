@@ -18,5 +18,5 @@ assert 'Data forum berhasil ditemukan.' in validate_message
 assert_that(validate_data).contains_only('id','user_id','forum_kategori_id','judul','konten','link','image','banyak_komentar','banyak_like','location','post_owner_name','email','category_name','badge_owner','is_post','is_like','is_report','is_bookmark','time_difference','images')
 
 
-# print(show_forum)
+# print(show_forum.json())
 print("Success Test Automation")

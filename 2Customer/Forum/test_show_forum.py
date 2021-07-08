@@ -1,5 +1,5 @@
 import requests
-from env import stagging
+from env import *
 from pprint import pprint
 from assertpy import assert_that
 
@@ -7,7 +7,7 @@ class TestCustomerShowForum:
 
     global setting_env, url_login, url_forum, url_forum_show, email, kata_sandi, wrong_token
 
-    setting_env = stagging
+    setting_env = mock
     url_login = f"{setting_env}/api/v2/customer/auth/login/email"
     url_forum = f"{setting_env}/api/v2/customer/forums"
     url_forum_show = f"{setting_env}/api/v2/customer/forums/"
@@ -24,18 +24,12 @@ class TestCustomerShowForum:
             "Accept": "application/json"
         }
         login = requests.post(url_login, params=param, headers=headers)
-        headers2 = {
+        headers = {
             "Accept": "application/json",
-            "Authorization": f"Bearer {login.json().get('token')}"
+            # "Authorization": f"Bearer {login.json().get('token')}"
         }
-        param2 = {
-            'forum_category_id': '1',
-            'perPage': '5',
-            'page': '1'
-        }
-        index_forum = requests.get(url_forum, params=param2, headers=headers2)
-        show_forum = requests.get(url_forum_show + str(index_forum.json().get('data')['forums']['data'][0]['id']),
-                                  headers=headers2)
+
+        show_forum = requests.get(url_forum_show+'107', headers=headers)
 
         validate_status = show_forum.json().get('success')
         validate_message = show_forum.json().get('message')
@@ -43,13 +37,11 @@ class TestCustomerShowForum:
 
         assert show_forum.status_code == 200
         assert validate_status == bool(True)
-        assert "Data forum berhasil ditemukan." in validate_message
-        assert_that(validate_data).is_not_none()
+        assert 'Data forum berhasil ditemukan.' in validate_message
         assert_that(validate_data).contains_only('id', 'user_id', 'forum_kategori_id', 'judul', 'konten', 'link',
-                                                 'image',
-                                                 'banyak_komentar', 'banyak_like', 'location', 'post_owner_name',
-                                                 'category_name', 'badge_owner', 'is_post', 'is_like', 'is_report',
-                                                 'is_bookmark', 'time_difference', 'images')
+                                                 'image', 'banyak_komentar', 'banyak_like', 'location',
+                                                 'post_owner_name', 'email', 'category_name', 'badge_owner', 'is_post',
+                                                 'is_like', 'is_report', 'is_bookmark', 'time_difference', 'images')
 
     def test_show_forum_wrong_token(self):
         param = {
