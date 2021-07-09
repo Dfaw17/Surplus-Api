@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="unit test show forum positif case">
-      <change afterPath="$PROJECT_DIR$/archive/output_1625737346.750985.json" afterDir="false" />
+    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="unit test get comment forum positif case">
+      <change afterPath="$PROJECT_DIR$/2Customer/Forum/test_report_comment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625799865.5154266.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625799883.2801862.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625800418.235379.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625800431.4966946.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625800441.8155077.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625800526.6170275.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625800537.238399.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625800544.496519.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2Customer/Forum/test_get_comment.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Forum/test_get_comment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2Customer/Forum/test_store_comment.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Forum/test_store_comment.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/command" beforeDir="false" afterPath="$PROJECT_DIR$/command" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/output.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pytest_html_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/pytest_html_report.html" afterDir="false" />
@@ -177,13 +185,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615261351900</updated>
-    </task>
-    <task id="LOCAL-00023" summary="add test scenario test customer test register progres positive &amp; negative">
-      <created>1616745292529</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1616745292529</updated>
     </task>
     <task id="LOCAL-00024" summary="add test scenario test customer test check email positive &amp; negative">
       <created>1616746689108</created>
@@ -521,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625734853652</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="unit test get comment forum positif case">
+      <created>1625737402191</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1625737402191</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -550,7 +558,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="adjustment branch feature merchant and customer" />
     <MESSAGE value="add test scenario customer forum show positive &amp; negative" />
     <MESSAGE value="add test scenario customer forum get comment positive &amp; negative" />
     <MESSAGE value="add test scenario customer forum like unlike positive &amp; negative" />
@@ -575,6 +582,7 @@
     <MESSAGE value="adjustment" />
     <MESSAGE value="unit test index forum positif case" />
     <MESSAGE value="unit test show forum positif case" />
-    <option name="LAST_COMMIT_MESSAGE" value="unit test show forum positif case" />
+    <MESSAGE value="unit test get comment forum positif case" />
+    <option name="LAST_COMMIT_MESSAGE" value="unit test get comment forum positif case" />
   </component>
 </project>

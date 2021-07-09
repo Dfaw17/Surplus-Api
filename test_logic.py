@@ -5,21 +5,22 @@ headers = {
     "Accept": "application/json",
     # "Authorization": f"Bearer {login.json().get('token')}"
 }
+
 param = {
-    "forum_id" : "107"
+    "forum_id": "414",
+    "forum_komentar_id": "433",
+    "forum_report_kategori_id": "4",
+    "content": "Posting data pribadi"
 }
-url_show_forum = "https://5bb4e7db-1cd4-4003-ac9a-526e1696768c.mock.pstmn.io/api/v2/customer/comments"
-show_forum = requests.get(url_show_forum, headers=headers, params=param)
+url_report_comment = "https://5bb4e7db-1cd4-4003-ac9a-526e1696768c.mock.pstmn.io/api/v2/customer/reports/comment"
+report_comment= requests.post(url_report_comment, headers=headers, params=param)
 
-validate_status = show_forum.json().get('success')
-validate_message = show_forum.json().get('message')
-validate_data = show_forum.json().get('data')[0]
+validate_status = report_comment.json().get('success')
+validate_message = report_comment.json().get('message')
 
-assert show_forum.status_code == 200
+assert report_comment.status_code == 200
 assert validate_status == bool(True)
-assert 'Komentar ditemukan' in validate_message
-assert_that(validate_data).contains_only('id','user_id','forum_id','komentar','banyak_like','created_at','updated_at','is_like','time_difference','is_report','is_post','commenter','email','commenter_badge')
+assert 'Komentar berhasil dilaporkan! Admin Surplus akan menindaklanjuti pelaporan kamu ya' in validate_message
 
-
-# print(show_forum.json())
+# print(report_comment.json())
 print("Success Test Automation")

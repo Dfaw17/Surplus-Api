@@ -1,13 +1,13 @@
 import requests
-from env import stagging
+from env import *
 from pprint import pprint
 from assertpy import assert_that
 
+
 class TestCustomerStoreForum:
+    global setting_env, url_login, url_forum, url_forum_store_comment, email, kata_sandi, wrong_token
 
-    global setting_env,url_login,url_forum,url_forum_store_comment,email,kata_sandi,wrong_token
-
-    setting_env = stagging
+    setting_env = mock
     url_login = f"{setting_env}/api/v2/customer/auth/login/email"
     url_forum = f"{setting_env}/api/v2/customer/forums"
     url_forum_store_comment = f"{setting_env}/api/v2/customer/comments"
@@ -24,42 +24,35 @@ class TestCustomerStoreForum:
             "Accept": "application/json"
         }
         login = requests.post(url_login, params=param, headers=headers)
-        headers2 = {
+        headers = {
             "Accept": "application/json",
             "Authorization": f"Bearer {login.json().get('token')}"
         }
-        param2 = {
-            'forum_category_id': '1',
-            'perPage': '5',
-            'page': '1'
+
+        forum_id = "212"
+        isi_comment = "Test komentar sendiri"
+
+        param = {
+            "forum_id": forum_id,
+            "comment": isi_comment,
+            "mentions[0]": "dfaw17@gmail.com",
+            "mentions[1]": "raffi@gmail.com"
         }
-        index_forum = requests.get(url_forum, params=param2, headers=headers2)
-        headers3 = {
-            "Accept": "application/json",
-            "Authorization": f"Bearer {login.json().get('token')}"
-        }
-        param3 = {
-            "forum_id": index_forum.json().get('data')['forums']['data'][0]['id'],
-            "comment": "Test komentar sendiri"
-        }
-        store_comment = requests.post(url_forum_store_comment, params=param3, headers=headers3)
+        # url_store_comment = "https://5bb4e7db-1cd4-4003-ac9a-526e1696768c.mock.pstmn.io/api/v2/customer/comments"
+        store_comment = requests.post(url_forum_store_comment, headers=headers, params=param)
 
         validate_status = store_comment.json().get('success')
         validate_message = store_comment.json().get('message')
         validate_data = store_comment.json().get('data')
-        validate_data_forum_id = store_comment.json().get('data')['forum_id']
-        validate_data_komentar = store_comment.json().get('data')['komentar']
 
-        assert store_comment.status_code == 201
+        assert store_comment.status_code == 200
         assert validate_status == bool(True)
-        assert "Komentar berhasil diposting." in validate_message
-        assert_that(validate_data).is_not_none()
+        assert 'Komentar berhasil diposting.' in validate_message
+        assert_that(validate_data['forum_id']).is_equal_to(forum_id)
+        assert_that(validate_data['komentar']).is_equal_to(isi_comment)
         assert_that(validate_data).contains_only('user_id', 'forum_id', 'komentar', 'updated_at', 'created_at', 'id',
-                                                 'is_like',
-                                                 'time_difference', 'is_report', 'is_post', 'commenter',
+                                                 'is_like', 'time_difference', 'is_report', 'is_post', 'commenter',
                                                  'commenter_badge')
-        assert validate_data_forum_id == str(index_forum.json().get('data')['forums']['data'][0]['id'])
-        assert validate_data_komentar == "Test komentar sendiri"
 
     def test_store_commnet_token_empty_value(self):
         param = {
@@ -348,6 +341,3 @@ class TestCustomerStoreForum:
         assert store_comment.status_code == 422
         assert validate_status == bool(False)
         assert "Komentar tidak boleh kosong." in validate_message
-
-
-

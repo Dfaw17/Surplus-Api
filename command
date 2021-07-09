@@ -7,3 +7,9 @@
 4. unit test show forum = python -m pytest -v 2Customer\Forum\test_show_forum.py::TestCustomerShowForum::test_show_forum_normal
 
 5. unit test get comment = python -m pytest -v 2Customer\Forum\test_get_comment.py::TestCustomerGetCommentForum::test_get_comment_normal
+
+6. unit test store comment = python -m pytest -v 2Customer\Forum\test_store_comment.py::TestCustomerStoreForum::test_store_comment_normal
+
+7. unit test report comment = python -m pytest -v 2Customer\Forum\test_report_comment.py::TestCustomerReportForum::test_report_comment_normal
+
+
