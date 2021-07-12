@@ -12,4 +12,6 @@
 
 7. unit test report comment = python -m pytest -v 2Customer\Forum\test_report_comment.py::TestCustomerReportForum::test_report_comment_normal
 
+8. unit test search filter forum = python -m pytest -v 2Customer\Forum\test_search_filter.py::TestSearchFilterForum
+
 
