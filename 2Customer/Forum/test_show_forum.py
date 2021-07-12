@@ -3,8 +3,8 @@ from env import *
 from pprint import pprint
 from assertpy import assert_that
 
-class TestCustomerShowForum:
 
+class TestCustomerShowForum:
     global setting_env, url_login, url_forum, url_forum_show, email, kata_sandi, wrong_token
 
     setting_env = mock
@@ -29,7 +29,7 @@ class TestCustomerShowForum:
             # "Authorization": f"Bearer {login.json().get('token')}"
         }
 
-        show_forum = requests.get(url_forum_show+'107', headers=headers)
+        show_forum = requests.get(url_forum_show + '107', headers=headers)
 
         validate_status = show_forum.json().get('success')
         validate_message = show_forum.json().get('message')
