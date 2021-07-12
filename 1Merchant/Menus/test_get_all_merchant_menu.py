@@ -1,11 +1,11 @@
 import requests
-from env import stagging
+from env import *
+
 
 class TestGetAllMerchantMenu:
-
     global url_get_all_merchant_menu, url_login, email, kata_sandi, wrong_token, setting_env
 
-    setting_env = stagging
+    setting_env = testing
     url_get_all_merchant_menu = f"{setting_env}/api/v2/merchant/menus/"
     url_login = f"{setting_env}/api/v2/merchant/auth/login"
     email = "vd1@gmail.com"

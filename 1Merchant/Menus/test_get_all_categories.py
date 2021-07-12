@@ -1,18 +1,19 @@
 import requests
-from env import stagging
+from env import *
+from assertpy import *
+
 
 class TestGetAllCategories:
-
     global url_all_category, url_login, email, kata_sandi, wrong_token, setting_env
 
-    setting_env = stagging
+    setting_env = testing
     url_all_category = f"{setting_env}/api/v2/merchant/categories"
     url_login = f"{setting_env}/api/v2/merchant/auth/login"
     email = "vd1@gmail.com"
     kata_sandi = "12345678"
     wrong_token = "yJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc3RhZ2luZy5hZG1pbnN1cnBsdXMubmV0XC9hcGlcL3YyXC9tZXJjaGFudFwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MTUzOTIzMDQsImV4cCI6MTYxNzk4NDMwNCwibmJmIjoxNjE1MzkyMzA0LCJqdGkiOiJOVGJ1Qk4xODE2VU5Fd2VKIiwic3ViIjo0MDc3LCJwcnYiOiIyNzQxMDVkYTZlOTViZWYyODA3Nzg2ZGQ4NzM4ODY3Y2Y5YzAyYWFiIn0.QQqZAjqTaM6aUJ-uZU8E53iIRySWB_A9mQTIt_tUXsQ"
 
-    def test_get_all_categories_menu_normal (self):
+    def test_get_all_categories_menu_normal(self):
         param = {
             "email": email,
             "password": kata_sandi
@@ -29,14 +30,22 @@ class TestGetAllCategories:
 
         validate_status = data.get("success")
         validate_message = data.get("message")
-        validate_data = len(data.get("data"))
+        validate_len_data = len(data.get("data"))
+        validate_data = data.get("data")
 
         assert validate_status == bool(True)
         assert response.status_code == 200
         assert "Data menu ditemukan." in validate_message
-        assert validate_data >= 1
+        assert validate_len_data >= 1
+        assert_that(validate_data[0]['nama']).is_equal_to('Makanan Berat')
+        assert_that(validate_data[1]['nama']).is_equal_to('Makanan Vegan')
+        assert_that(validate_data[2]['nama']).is_equal_to('Roti & Kue')
+        assert_that(validate_data[3]['nama']).is_equal_to('Bahan Makanan')
+        assert_that(validate_data[4]['nama']).is_equal_to('Buah & Sayur')
+        assert_that(validate_data[5]['nama']).is_equal_to('Snack')
+        assert_that(validate_data[6]['nama']).is_equal_to('Minuman')
 
-    def test_get_all_categories_menu_wrong_token (self):
+    def test_get_all_categories_menu_wrong_token(self):
         headers = {
             "Accept": "application/json",
             "Authorization": f"Bearer {wrong_token}"

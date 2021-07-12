@@ -1,17 +1,17 @@
 import requests
-from env import stagging
+from env import *
 from pprint import pprint
 from assertpy import assert_that
 import pytest
 
+
 class TestMerchantBranchIndex:
+    global setting_env, url_login, url_branch, email, kata_sandi, wrong_token
 
-    global setting_env,url_login,url_branch,email,kata_sandi,wrong_token
-
-    setting_env = stagging
+    setting_env = sandbox
     url_login = f"{setting_env}/api/v2/merchant/auth/login"
     url_branch = f"{setting_env}/api/v2/merchant/branches"
-    email = "vd@gmail.com"
+    email = "sdet@gmail.com"
     kata_sandi = '12345678'
     wrong_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc3RhZ2luZy5hZG1pbnN1cnBsdXMubmV0XC9hcGlcL3YyXC9jdXN0b21lclwvYXV0aFwvbG9naW5cL2VtYWlsIiwiaWF0IjoxNjE2ODA1NzI2LCJleHAiOjE2MTkzOTc3MjYsIm5iZiI6MTYxNjgwNTcyNiwianRpIjoib05ESmxFRE5hSzNrN2RtVyIsInN1YiI6NDEyNiwicHJ2IjoiMjc0MTA1ZGE2ZTk1YmVmMjgwNzc4NmRkODczODg2N2NmOWMwMmFhYiJ9.fj51xIfQrqleRvdSJUbWcdrvsxQPUn8HpccnOmTgPDI'
 

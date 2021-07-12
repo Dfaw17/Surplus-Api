@@ -1,22 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="unit test get comment forum positif case">
-      <change afterPath="$PROJECT_DIR$/2Customer/Forum/test_report_comment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/archive/output_1625799865.5154266.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/archive/output_1625799883.2801862.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/archive/output_1625800418.235379.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/archive/output_1625800431.4966946.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/archive/output_1625800441.8155077.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/archive/output_1625800526.6170275.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/archive/output_1625800537.238399.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/archive/output_1625800544.496519.json" afterDir="false" />
+    <list default="true" id="d4738dc6-4aa2-4ac5-a5ca-1eb52bafdb67" name="Default Changelist" comment="unit test store comment forum positif case &amp; unit test report comment forum positif case">
+      <change afterPath="$PROJECT_DIR$/archive/output_1625800574.9753525.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625803354.093676.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625803896.8235722.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625803975.3075428.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625804029.0607948.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625804278.0587275.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625804732.118825.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625804819.670151.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625804826.3476403.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625804903.6651914.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625804979.0313716.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625804993.4197264.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625805002.4070697.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625805038.4964223.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625805061.027349.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625805073.869317.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625805143.0200229.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/output_1625811831.653573.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2Customer/Forum/test_store_comment.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Forum/test_store_comment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/command" beforeDir="false" afterPath="$PROJECT_DIR$/command" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1Merchant/Auth/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Auth/test_login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1Merchant/Auth/test_logout.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Auth/test_logout.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1Merchant/Auth/test_password_reset.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Auth/test_password_reset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1Merchant/Branch/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Branch/index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1Merchant/Menus/test_get_all_categories.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Menus/test_get_all_categories.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1Merchant/Menus/test_get_all_merchant_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Menus/test_get_all_merchant_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1Merchant/Profiles/test_show_profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/1Merchant/Profiles/test_show_profile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2Customer/Orders/test_gosend_estimate.py" beforeDir="false" afterPath="$PROJECT_DIR$/2Customer/Orders/test_gosend_estimate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/env.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/output.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pytest_html_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/pytest_html_report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_logic.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,13 +200,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615261351900</updated>
-    </task>
-    <task id="LOCAL-00024" summary="add test scenario test customer test check email positive &amp; negative">
-      <created>1616746689108</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1616746689108</updated>
     </task>
     <task id="LOCAL-00025" summary="add test scenario test customer test forget password positive &amp; negative">
       <created>1616748186642</created>
@@ -529,7 +537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625737402191</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="unit test store comment forum positif case &amp; unit test report comment forum positif case">
+      <created>1625800611998</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1625800611998</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -558,7 +573,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add test scenario customer forum show positive &amp; negative" />
     <MESSAGE value="add test scenario customer forum get comment positive &amp; negative" />
     <MESSAGE value="add test scenario customer forum like unlike positive &amp; negative" />
     <MESSAGE value="add test scenario customer forum store positive &amp; negative" />
@@ -583,6 +597,7 @@
     <MESSAGE value="unit test index forum positif case" />
     <MESSAGE value="unit test show forum positif case" />
     <MESSAGE value="unit test get comment forum positif case" />
-    <option name="LAST_COMMIT_MESSAGE" value="unit test get comment forum positif case" />
+    <MESSAGE value="unit test store comment forum positif case &amp; unit test report comment forum positif case" />
+    <option name="LAST_COMMIT_MESSAGE" value="unit test store comment forum positif case &amp; unit test report comment forum positif case" />
   </component>
 </project>

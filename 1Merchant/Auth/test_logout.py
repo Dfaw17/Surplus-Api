@@ -1,24 +1,23 @@
 import requests
-from env import stagging
+from env import *
 
-class TestLogout :
 
+class TestLogout:
     global url_login, url_logut, email, kata_sandi, token, setting_env
 
-    setting_env = stagging
+    setting_env = testing
     url_login = f"{setting_env}/api/v2/merchant/auth/login"
     url_logut = f"{setting_env}/api/v2/merchant/auth/logout"
-    email = "vd1@gmail.com"
+    email = "sdet@gmail.com"
     kata_sandi = "12345678"
 
-    def test_logout_normal (self):
+    def test_logout_normal(self):
         param = {
             "email": email,
             "password": kata_sandi
         }
 
-        login = requests.post(url_login, data=param,
-                              headers={'Accept': 'application/json'})
+        login = requests.post(url_login, data=param, headers={'Accept': 'application/json'})
         token = login.json().get("token")
         param2 = {
             "token": token
@@ -35,8 +34,7 @@ class TestLogout :
         assert response.status_code == 200
         assert validate_message == "User logged out successfully"
 
-    def test_logout_wrong_token (self):
-
+    def test_logout_wrong_token(self):
         param2 = {
             "token": "WRONG TOKEN !!!"
         }
@@ -52,13 +50,12 @@ class TestLogout :
         assert response.status_code == 401
         assert validate_message == "Unauthorized"
 
-    def test_logout_empty_token (self):
-
+    def test_logout_empty_token(self):
         param2 = {
             "token": "WRONG TOKEN !!!"
         }
 
-        response = requests.post(url_logut,headers={'Accept': 'application/json'})
+        response = requests.post(url_logut, headers={'Accept': 'application/json'})
 
         data = response.json()
         validate_status = data.get('success')

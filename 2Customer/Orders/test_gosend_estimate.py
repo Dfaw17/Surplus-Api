@@ -2,13 +2,15 @@ import requests
 from env import *
 from pprint import pprint
 from assertpy import assert_that
+from faker.providers.geo import Provider
+fake = Provider()
 
 
 class TestCustomerOrdersGosendEstimate:
 
     global setting_env,url_login,url_gosend_estimate,dari,ke,email,kata_sandi,wrong_token
 
-    setting_env = stagging
+    setting_env = sandbox
     url_login = f"{setting_env}/api/v2/customer/auth/login/email"
     url_gosend_estimate = f"{setting_env}/api/v2/customer/gosend/estimate"
     dari = '-6.3772882,107.1062917'
@@ -27,6 +29,12 @@ class TestCustomerOrdersGosendEstimate:
         }
         login = requests.post(url_login, params=param, headers=headers)
 
+        origin = fake.local_latlng(country_code='ID', coords_only=True)
+        dest = fake.local_latlng(country_code='ID', coords_only=True)
+
+        print(origin)
+        print(dest)
+
         param2 = {
             "origin": "-6.181663,106.805884",
             "destination": "-6.188844,106.847186",
@@ -36,8 +44,7 @@ class TestCustomerOrdersGosendEstimate:
             "Accept": "application/json",
             "Authorization": f"Bearer {login.json().get('token')}"
         }
-        url2 = "https://5bb4e7db-1cd4-4003-ac9a-526e1696768c.mock.pstmn.io/api/v2/customer/gosend/estimate"
-        gosend_estimate = requests.get(url2, params=param2, headers=headers2)
+        gosend_estimate = requests.get(url_gosend_estimate, params=param2, headers=headers2)
 
         param3 = {
             "origin": "-6.181663,106.805884",
