@@ -8,14 +8,13 @@ import pytest
 class TestMerchantBranchIndex:
     global setting_env, url_login, url_branch, email, kata_sandi, wrong_token
 
-    setting_env = sandbox
+    setting_env = testing
     url_login = f"{setting_env}/api/v2/merchant/auth/login"
     url_branch = f"{setting_env}/api/v2/merchant/branches"
     email = "sdet@gmail.com"
     kata_sandi = '12345678'
     wrong_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc3RhZ2luZy5hZG1pbnN1cnBsdXMubmV0XC9hcGlcL3YyXC9jdXN0b21lclwvYXV0aFwvbG9naW5cL2VtYWlsIiwiaWF0IjoxNjE2ODA1NzI2LCJleHAiOjE2MTkzOTc3MjYsIm5iZiI6MTYxNjgwNTcyNiwianRpIjoib05ESmxFRE5hSzNrN2RtVyIsInN1YiI6NDEyNiwicHJ2IjoiMjc0MTA1ZGE2ZTk1YmVmMjgwNzc4NmRkODczODg2N2NmOWMwMmFhYiJ9.fj51xIfQrqleRvdSJUbWcdrvsxQPUn8HpccnOmTgPDI'
 
-    @pytest.mark.order(1)
     def test_index_branch_normal(self):
         param = {
             'email': email,
@@ -42,7 +41,6 @@ class TestMerchantBranchIndex:
         assert_that(validate_data).is_not_none()
         assert_that(validate_data[0]).contains_only('id', 'name', 'email', 'status', 'area', 'merchant_logo')
 
-    @pytest.mark.order(2)
     def test_index_branch_wrong_token(self):
         param = {
             'email': email,
@@ -66,7 +64,6 @@ class TestMerchantBranchIndex:
         assert validate_status == bool(False)
         assert "Unauthorized" in validate_message
 
-    @pytest.mark.order(3)
     def test_index_branch_token_empty(self):
         param = {
             'email': email,
