@@ -1,15 +1,15 @@
 import requests
-from env import stagging
+from env import *
 from assertpy import assert_that
 
-class TestShowMerchantMenu :
 
+class TestShowMerchantMenu:
     global setting_env, url_show_merchant_menu, url_login, email, kata_sandi, wrong_token
 
-    setting_env = stagging
+    setting_env = testing
     url_show_merchant_menu = f"{setting_env}/api/v2/merchant/menus/"
     url_login = f"{setting_env}/api/v2/merchant/auth/login"
-    email = "vd1@gmail.com"
+    email = "sdet@gmail.com"
     kata_sandi = "12345678"
     wrong_token = "yJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc3RhZ2luZy5hZG1pbnN1cnBsdXMubmV0XC9hcGlcL3YyXC9tZXJjaGFudFwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MTU2MTY0OTAsImV4cCI6MTYxODIwODQ5MCwibmJmIjoxNjE1NjE2NDkwLCJqdGkiOiJ5YjE4ZVlVY1JOVThVWWZ4Iiwic3ViIjo0MDc3LCJwcnYiOiIyNzQxMDVkYTZlOTViZWYyODA3Nzg2ZGQ4NzM4ODY3Y2Y5YzAyYWFiIn0.g1fCXWhLb_t7fll879LngGO03e1fy6B8mTdX4hrBrHM"
 
@@ -34,6 +34,7 @@ class TestShowMerchantMenu :
         validate_status = data.get("success")
         validate_message = data.get("message")
         validate_data_id = str(data.get("data")["id"])
+        validate_data = data.get("data")
         validate_merchant_id = str(data.get("data")["merchant_id"])
         validate_nama_makanan = data.get("data")["nama_menu_makanan"]
 
@@ -41,9 +42,18 @@ class TestShowMerchantMenu :
         assert response.status_code == 200
         assert validate_message == "Data menu ditemukan."
         assert validate_data_id == data_menu
+        assert_that(validate_data_id).is_equal_to(data_menu)
         assert_that(validate_merchant_id).is_not_none()
         assert_that(validate_nama_makanan).is_not_empty()
         assert data_merchat_id == validate_merchant_id
+        assert_that(validate_data).contains_only('id', 'nama_menu_makanan', 'merchant_kategori_makanan_id',
+                                                 'is_exclusive', 'deskripsi', 'harga_asli', 'harga_jual',
+                                                 'is_non_halal', 'weight', 'weight_string', 'image_thumbnail',
+                                                 'created_at', 'updated_at', 'stock_id', 'merchant_id',
+                                                 'waktu_mulai_penjemputan', 'waktu_akhir_penjemputan', 'stock',
+                                                 'in_catalog', 'is_active', 'is_missed', 'is_tomorrow', 'waktu_missed',
+                                                 'total_terjual', 'max_active_date', 'expired_date', 'expired_time',
+                                                 'max_storage_days', 'menu_images')
 
     def test_show_merchant_menu_empty_token(self):
         param = {
@@ -111,4 +121,3 @@ class TestShowMerchantMenu :
         assert validate_status == bool(False)
         assert response.status_code == 404
         assert validate_message == "Data tidak ditemukan"
-

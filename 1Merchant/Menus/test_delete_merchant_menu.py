@@ -1,18 +1,17 @@
 import requests
-from env import stagging
+from env import *
+
 
 class TestDeleteMerchantMenu:
+    global setting_env, delete_menu, url_login, url_getall_menu, email, kata_sandi, wrong_token, url_delete
 
-    global setting_env,delete_menu,url_login,url_get_all_merchant_menu,email,kata_sandi,wrong_token,insert_menu
-
-    setting_env = stagging
-    delete_menu = f"{setting_env}/api/v2/merchant/menus/"
+    setting_env = testing
+    url_getall_menu = f"{setting_env}/api/v2/merchant/menus/"
     url_login = f"{setting_env}/api/v2/merchant/auth/login"
-    url_get_all_merchant_menu = f"{setting_env}/api/v2/merchant/menus/"
-    insert_menu = f"{setting_env}/api/v2/merchant/menus"
-    email = "vd1@gmail.com"
+    url_delete = f"{setting_env}/api/v2/merchant/menus/"
+    email = "sdet@gmail.com"
     kata_sandi = "12345678"
-    wrong_token = "yJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc3RhZ2luZy5hZG1pbnN1cnBsdXMubmV0XC9hcGlcL3YyXC9tZXJjaGFudFwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MTUzOTIzMDQsImV4cCI6MTYxNzk4NDMwNCwibmJmIjoxNjE1MzkyMzA0LCJqdGkiOiJOVGJ1Qk4xODE2VU5Fd2VKIiwic3ViIjo0MDc3LCJwcnYiOiIyNzQxMDVkYTZlOTViZWYyODA3Nzg2ZGQ4NzM4ODY3Y2Y5YzAyYWFiIn0.QQqZAjqTaM6aUJ-uZU8E53iIRySWB_A9mQTIt_tUXsQ"
+    wrong_token = "kyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc3RhZ2luZy5hZG1pbnN1cnBsdXMubmV0XC9hcGlcL3YyXC9tZXJjaGFudFwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MTU3MDExNDIsImV4cCI6MTYxODI5MzE0MiwibmJmIjoxNjE1NzAxMTQyLCJqdGkiOiJjOFluT3BlMzRqRVVIemZSIiwic3ViIjo0MDc3LCJwcnYiOiIyNzQxMDVkYTZlOTViZWYyODA3Nzg2ZGQ4NzM4ODY3Y2Y5YzAyYWFiIn0.xxI5o6tgIvb3Eds4CCfSnXM3ThFYiQwYcTCxKmrZozI"
 
     def test_delete_menu_normal(self):
         param = {
@@ -22,37 +21,21 @@ class TestDeleteMerchantMenu:
         login = requests.post(url_login, data=param, headers={'Accept': 'application/json'})
         token = login.json().get("token")
         headers = {
-            "Authorization": f"Bearer {token}"
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/json"
         }
+        get_all = requests.get(url_getall_menu, headers=headers)
+        menu = get_all.json().get('data')[0]['id']
 
-        nama_makanan = "Pisang Nugget"
-        merchant_kategori = 60
-        deskripsi = "Pisang Nugget Mix"
-        harga_asli = 20000
-        harga_jual = 10000
-        status_halal = 0
-        param2 = {
-            "nama_menu_makanan": nama_makanan,
-            "merchant_kategori_makanan_id": merchant_kategori,
-            "deskripsi": deskripsi,
-            "harga_asli": harga_asli,
-            "harga_jual": harga_jual,
-            "is_non_halal": status_halal
-        }
-        response = requests.post(insert_menu, data=param2, headers=headers,
-                                 files={'image': open("pisangnug.jpg", 'rb')})
+        response = requests.delete(url_delete + str(menu), headers=headers)
+        data = response.json()
 
-        response = requests.get(url_get_all_merchant_menu, headers=headers)
-        data_id = str(response.json().get("data")[0]["id"])
-
-        response2 = requests.delete(delete_menu + data_id, headers=headers)
-        data = response2.json()
-        validate_message = data.get("message")
         validate_status = data.get("success")
+        validate_message = data.get("message")
 
-        assert response2.status_code == 201
+        assert response.status_code == 201
         assert validate_status == bool(True)
-        assert validate_message == "Data menu berhasil dihapus."
+        assert "Data menu berhasil dihapus." in validate_message
 
     def test_delete_menu_wrong_id(self):
         param = {
@@ -62,20 +45,23 @@ class TestDeleteMerchantMenu:
         login = requests.post(url_login, data=param, headers={'Accept': 'application/json'})
         token = login.json().get("token")
         headers = {
-            "Authorization": f"Bearer {token}"
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/json"
         }
+        get_all = requests.get(url_getall_menu, headers=headers)
+        menu = get_all.json().get('data')[0]['id']
 
-        response = requests.get(url_get_all_merchant_menu, headers=headers)
-        data_id = str(response.json().get("data")[0]["id"])
+        response = requests.delete(url_delete + '10000', headers=headers)
+        data = response.json()
 
-        response2 = requests.delete(delete_menu+"666", headers=headers)
-        data = response2.text
-        # print(data)
+        validate_status = data.get("success")
+        validate_message = data.get("message")
 
-        assert response2.status_code == 500
-        assert "Server Error" in data
+        assert response.status_code == 500
+        assert validate_status == bool(False)
+        assert "Aduh! Ada yang salah di sistem kami. Kita sedang memperbaikinya secepat mungkin. Kamu mungkin ingin mencoba sekali lagi" in validate_message
 
-    def test_delete_menu_id_empty_value(self):
+    def test_delete_menu_empty_id(self):
         param = {
             "email": email,
             "password": kata_sandi
@@ -83,40 +69,21 @@ class TestDeleteMerchantMenu:
         login = requests.post(url_login, data=param, headers={'Accept': 'application/json'})
         token = login.json().get("token")
         headers = {
-            "Authorization": f"Bearer {token}"
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/json"
         }
+        get_all = requests.get(url_getall_menu, headers=headers)
+        menu = get_all.json().get('data')[0]['id']
 
-        response = requests.get(url_get_all_merchant_menu, headers=headers)
-        data_id = str(response.json().get("data")[0]["id"])
+        response = requests.delete(url_delete, headers=headers)
+        data = response.json()
 
-        response2 = requests.delete(delete_menu, headers=headers)
-        data = response2.text
+        validate_status = data.get("success")
+        validate_message = data.get("message")
 
-        assert response2.status_code == 405
-        assert "Whoops, looks like something went wrong" in data
-
-    def test_delete_menu_token_empty_value(self):
-        param = {
-            "email": email,
-            "password": kata_sandi
-        }
-        login = requests.post(url_login, data=param, headers={'Accept': 'application/json'})
-        token = login.json().get("token")
-        headers = {
-            "Authorization": f"Bearer {token}"
-        }
-
-        response = requests.get(url_get_all_merchant_menu, headers=headers)
-        data_id = str(response.json().get("data")[0]["id"])
-        headers2 = {
-            "Authorization": ""
-        }
-
-        response2 = requests.delete(delete_menu + data_id, headers=headers2)
-        data = response2.text
-
-        assert response2.status_code == 401
-        assert "Unauthorized" in data
+        assert response.status_code == 405
+        assert validate_status == bool(False)
+        assert "Method Not Allowed" in validate_message
 
     def test_delete_menu_wrong_token(self):
         param = {
@@ -126,18 +93,50 @@ class TestDeleteMerchantMenu:
         login = requests.post(url_login, data=param, headers={'Accept': 'application/json'})
         token = login.json().get("token")
         headers = {
-            "Authorization": f"Bearer {token}"
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/json"
+        }
+        get_all = requests.get(url_getall_menu, headers=headers)
+        menu = get_all.json().get('data')[0]['id']
+        headers = {
+            "Authorization": wrong_token,
+            "Accept": "application/json"
         }
 
-        response = requests.get(url_get_all_merchant_menu, headers=headers)
-        data_id = str(response.json().get("data")[0]["id"])
-        headers2 = {
-            "Authorization": wrong_token
+        response = requests.delete(url_delete + str(menu), headers=headers)
+        data = response.json()
+
+        validate_status = data.get("success")
+        validate_message = data.get("message")
+
+        assert response.status_code == 401
+        assert validate_status == bool(False)
+        assert "Unauthorized" in validate_message
+
+    def test_delete_menu_empty_token(self):
+        param = {
+            "email": email,
+            "password": kata_sandi
+        }
+        login = requests.post(url_login, data=param, headers={'Accept': 'application/json'})
+        token = login.json().get("token")
+        headers = {
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/json"
+        }
+        get_all = requests.get(url_getall_menu, headers=headers)
+        menu = get_all.json().get('data')[0]['id']
+        headers = {
+            "Authorization": "",
+            "Accept": "application/json"
         }
 
-        response2 = requests.delete(delete_menu + data_id, headers=headers2)
-        data = response2.text
+        response = requests.delete(url_delete + str(menu), headers=headers)
+        data = response.json()
 
-        assert response2.status_code == 401
-        assert "Unauthorized" in data
+        validate_status = data.get("success")
+        validate_message = data.get("message")
 
+        assert response.status_code == 401
+        assert validate_status == bool(False)
+        assert "Unauthorized" in validate_message
